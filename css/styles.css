@@ -1,6 +1,11 @@
 body {
         background-color:#000;
-     }
+}
  h1 {
       color: white;
-    }
+}
+h2 {
+	color: #fc0;
+	text-align: center;
+	font: italic 10pt Verdana, Sans-serif;
+}
