@@ -11,6 +11,11 @@ h2 {
 	text-align: center;
 	font: italic 10pt Verdana, Sans-serif;
 }
+h3 {
+	color: #fc0;
+	text-align: center;
+	font: italic 10pt Verdana, Sans-serif;
+}
 
 <style>
 	body{font-family:Calibri, Tahoma, Arial}
