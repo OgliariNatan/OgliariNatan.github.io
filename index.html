@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript">
- 	$(document).ready(function(){
- 		$("#content div:nth-child(1)").show();
- 		$(".abas li:first div").addClass("selected");
- 		$(".aba").click(function(){
- 			$(".aba").removeClass("selected");
- 			$(this).addClass("selected");
- 			var indice = $(this).parent().index();
- 			indice++;
- 			$("#content div").hide();
- 			$("#content div:nth-child("+indice+")").show();
- 		});
-
- 		$(".aba").hover(
- 			function(){$(this).addClass("ativa")},
- 			function(){$(this).removeClass("ativa")}
- 		);
- 	});
- </script>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
@@ -30,80 +9,32 @@
 </head>
 <body>
 	<div class="TabControl">
-<!- Aq ui começa as alterações->
-		<div id="header">
-				<ul class="abas">
-						<li>
-								<div class="aba">
-									<span>Tab 1</span>
-								</div>
-							</li>
-							<li>
-								<div class="aba">
-									<span>Tab 2</span>
-								</div>
-							</li>
-			<li>
-		<div class="aba">
-			<span>Tab 3</span>
-		</div>
-	</li>
-	<li>
-		<div class="aba">
-			<span>Tab 4</span>
-		</div>
-	</li>
-</ul>
-</div>
+		
+		<img src="img/logo.jpg">
 
-<div id="content">
-		<div class="conteudo">
-			<img src="img/logo.jpg">
+		<h1> Kamby Abirú </h1>
+		<p style="color: red">Este projeto tem como objetivo o desenvolvimento de um sistema com junção de tecnologias existente, para aplicação no ciclo de monitoramento leiteiro para pequenos/medios produtores.</p>
+		<h2> Teste do meu primeiro site.</h2>
+		<p style="color: blue"> Um  teste maluco, para verificar a cor de cada paragrafo.</p> <br>
 
-			<h1> Kamby Abirú </h1>
-			<p style="color: red">Este projeto tem como objetivo o desenvolvimento de um sistema com junção de tecnologias existente, para aplicação no ciclo de monitoramento leiteiro para pequenos/medios produtores.</p>
+  	Algoritimo e programação estruturada: <img src="https://img.shields.io/github/directory-file-count/OgliariNatan/Algoritimo-e-Programacao-Estruturada?label=qtd_arquivos&style=plastic" /> <br>
+		<h3> Minhas Linguagens </h3>
+		<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OgliariNatan&hide=html&layout=compact=true&theme=dracula"/> <br>
 
-		</div>
-		<div class="conteudo">
-			<h2> Teste do meu primeiro site.</h2>
-			<p style="color: blue"> Um  teste maluco, para verificar a cor de cada paragrafo.</p> <br>
-
-	  	Algoritimo e programação estruturada: <img src="https://img.shields.io/github/directory-file-count/OgliariNatan/Algoritimo-e-Programacao-Estruturada?label=qtd_arquivos&style=plastic" /> <br>
-		</div>
-		<div class="conteudo">
-			<img src="img/istockphoto-1468488488-1024x1024.jpg">
-			<h3> Minhas Linguagens </h3>
-			<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OgliariNatan&hide=html&layout=compact=true&theme=dracula"/> <br>
-		</div>
-		<div class="conteudo">
-			<img src="img/ae0a066f-f198-4bc1-b670-6126638c3630.jpeg">
-			<table border="0">
-				<tr>
-					<th>Sala</th>
-					<th>Ilumidade</th>
-				</tr>
-				<tr>
-					<td align="right">H211</td>
-					<td align="right">H212</td>
-				</tr>
-				<tr>
-					<td align="right">G211</td>
-					<td align="right">G212</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-
-
-
-
-
-<!- Aqui termina as alterações->
-
-
-
-
-
+		<table border="0">
+			<tr>
+				<th>Sala</th>
+				<th>Ilumidade</th>
+			</tr>
+			<tr>
+				<td align="right">H211</td>
+				<td align="right">H212</td>
+			</tr>
+			<tr>
+				<td align="right">G211</td>
+				<td align="right">G212</td>
+			</tr>
+		</table>
 
 	</div>
 </body>
