@@ -4,6 +4,7 @@
   </p>
   
   <p>
+ <img src="https://img.shields.io/github/languages/count/OgliariNatan/OgliariNatan.github.io?style=plastic">
  
   # Linguagem predominante: <br>
  
