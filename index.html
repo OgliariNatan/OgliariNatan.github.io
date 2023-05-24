@@ -1,55 +1,112 @@
 <!DOCTYPE html>
-.tabs input[type='radio'] {
-    display:none
-}
-.tabs label {
-    width:100px;
-    text-align:center;
-    padding: 20px;
-    color:#666666;
-    display:inline-block;
-    cursor:pointer;
-}
-.tab-content {
-    display:none;
-    background-color:#F3F3F3;
-    border-top:6px #FE7B43 solid;
-    text-align:center;
-    padding:50px 0;
-    position:relative;
-}
-#tabs-1 :checked + * + * + * + label { background-color:#FE7B43; color:#FFF; }
-#tabs-1 :checked + * + * + * + * + * + * + * + .tab-content { display: block }
-<div class="tabs" id="tabs-1">
+<html>
+<head>
+	<meta name=author content="Natan Ogliari" />
+	<meta name=kewords content="projetos eletrônico" />
+	<title> Kamby Abirú</title>
+  <meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://github.com/OgliariNatan/OgliariNatan.github.io/blob/master/css/styles.css">
+  <style type="text/css">
+    .abas {
+    position: relative;
+    }
+    .aba {
+    display: inline;
+    }
+    .aba > a {
+    float: left;
+    padding: 0.5em 1em;
+    background: linear-gradient(#FFF, #EEE);
+    border-width: 1px;
+    border-style: solid;
+    border-color: #CCC #CCC #FFF;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    }
+    .aba:not(:target) a {
+    border-bottom: 0 none;
 
-                <input id="tab-1-1" name="tabs-group-1" type="radio" checked />
-                <input id="tab-1-2" name="tabs-group-1" type="radio" />
-                <input id="tab-1-3" name="tabs-group-1" type="radio" />
-                <input id="tab-1-4" name="tabs-group-1" type="radio" />
+    }
+    .aba:target a, a:hover {
+    background: white;
+    }
+    .conteudo {
+    position: absolute;
+    left: 0;
+    top: calc(2em + 4px); /* altura do link + bordas */
+    z-index: -2;
+    border: 1px solid #CCC;
+    background-color: white;
+    }
+    .aba:target .conteudo {
+    z-index: -1;
+    }
+		.paragrafo{ <!- para remover -/>
+				color: blue;
+		}
+  </style>
+</head>
+<body>
+  <!-- Criando a listagem -->
+  <ul class="abas">
+    <!-- Aqui, criação da primeira aba -->
+    <li class="aba" id="aba-1">
+     <a href="#aba-1">Início</a>
+     <section class="conteudo">
+			 <img src="img/logo.jpg">
 
-                <label for="tab-1-1">ABA 1</label>
-                <label for="tab-1-2">ABA 2</label>
-                <label for="tab-1-3">ABA 3</label>
-                <label for="tab-1-4">ABA 4</label>
+			 <h1> Kamby Abirú </h1>
 
-                <!-- Aba 1 -->
-                <div class="tab-content">
-                    asdasdasdasdasd<br><br>dfasdfsadfasdfasdasdasdasdasd<br><br>dfasdfsadfasdfasdasdasdasdasd<br><br>dfasdfsadfasdf
-                </div>
+			 <p style="color: red">Este projeto tem como objetivo o desenvolvimento de um sistema com junção de tecnologias existente, para aplicação no ciclo de monitoramento leiteiro para pequenos/medios produtores.</p>
 
-                <!-- Aba 2 -->
-                <div class="tab-content">
-                    CONTEUDO ABA 2
-                </div>
+		 </section>
+   </li>
+   <!-- Aqui, criação da segunda aba -->
+   <li class="aba" id="aba-2">
+     <a href="#aba-2">Sobre</a>
+     <section class="conteudo">
+			 <h1> Sobre min </h1>
+			 	<div>
+					<p> Repositório <a href="www.github.io/OgliariNatan"> do Github</a> </p>
 
-                <!-- Aba 3 -->
-                <div class="tab-content">
-                    CONTEUDO ABA 3
-                </div>
+				</div>
 
-                <!-- Aba 4 -->
-                <div class="tab-content">
-                    CONTEUDO ABA 4
-                </div>
+			 <h2> Teste do meu primeiro site.</h2>
+	 	 		<p> Um  teste maluco, para verificar a cor de cada paragrafo.</p> <br>
+				<div>
+					Repositório do  <a href="https://github.com/OgliariNatan/Algoritimo-e-Programacao-Estruturada" >github:</a>
+	 				Algoritimo e programação estruturada: <img src="https://img.shields.io/github/directory-file-count/OgliariNatan/Algoritimo-e-Programacao-Estruturada?label=qtd_arquivos&style=plastic" /> <br>
+				</div>
+				<p style="color: violet"> Tentarei copartilhar os mesus testes como aprendiz de TI e como profissional.  </p>
+		 </section>
+   </li>
 
-            </div>
+   <!-- Aqui, criação da terceira aba -->
+   <li class="aba" id="aba-3">
+     <a href="#aba-3">Conteúdo</a>
+     <section class="conteudo">
+			 <h3> Minhas Linguagens </h3>
+			 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OgliariNatan&hide=html&layout=compact=true&theme=dracula"/> <br>
+			 <p> O conteudo esta em desenvolvimento... </p>
+			 <table border="0">
+				 	<tr>
+					 <th>Sala</th>
+					 <th>Ilumidade</th>
+					</tr>
+				<tr>
+					<td align="right">H211</td>
+					<td align="right">H212</td>
+				</tr>
+				<tr>
+					<td align="right">G211</td>
+					<td align="right">G212</td>
+				</tr>
+				</table>
+			<img src="img/istockphoto-1468488488-1024x1024.jpg">
+
+		 </section>
+   </li>
+</ul>
+
+</body>
+</html>
