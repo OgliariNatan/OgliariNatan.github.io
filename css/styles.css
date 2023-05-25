@@ -7,15 +7,16 @@ h1 {
 }
 
 h2 {
-	color: #fc0;
-	text-align: center;
+	color: red;
+	text-align: left;
 	font: italic 10pt Verdana, Sans-serif;
 }
 h3 {
 	color: #fc0;
-	text-align: center;
+	text-align: left;
 	font: italic 10pt Verdana, Sans-serif;
 }
 p {
 	color: blue;
+	text-align: center;
 }
