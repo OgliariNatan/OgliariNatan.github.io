@@ -3,6 +3,7 @@
 <head>
 	<meta name=author content="Natan Ogliari" />
 	<meta name=kewords content="projetos eletrônico" />
+	<meta charset="utf-8" />
 	<title> Kamby Abirú</title>
   <meta charset="UTF-8" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -59,6 +60,18 @@
 
 		 </section>
    </li>
+	 <!-- We will put our React component inside this div. -->
+	 <div id="like_button_container"></div>
+
+	 <!-- Load React. -->
+	 <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+	 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+	 <!-- Load our React component. -->
+	 <script src="like_button.js"></script>
+
+
    <!-- Aqui, criação da segunda aba -->
    <li class="aba" id="aba-2">
      <a href="#aba-2">Sobre</a>
