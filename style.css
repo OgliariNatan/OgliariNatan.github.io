@@ -3,6 +3,7 @@
   --main-purple: #b0aac0;
   --main-blue: #45567d;
   --main-gray: #303841;
+  --main-padding: 14px;
 }
 
 * {
@@ -220,6 +221,7 @@ a {
 
 .formacao-section-header > h2 {
     font-size: 4rem;
+    color: var(--main-purple);
 }
 
 .formacao-section-header > p {
