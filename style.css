@@ -303,3 +303,6 @@ form {
 .error {
   color: tomato;
 }
+
+input:hover,
+input:focus,
