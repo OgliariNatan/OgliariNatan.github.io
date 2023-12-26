@@ -284,3 +284,8 @@ font-weight: 900;
 font-sie: 20px;
 font-family: Helvetica, Arial, sans-serif;
 }
+
+form {
+  width: 100%;
+  max-width: 30rem;
+}
