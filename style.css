@@ -289,3 +289,17 @@ form {
   width: 100%;
   max-width: 30rem;
 }
+
+
+.success,
+.error {
+  text-align: center;
+}
+
+.success {
+  color: greenyellow;
+}
+
+.error {
+  color: tomato;
+}
