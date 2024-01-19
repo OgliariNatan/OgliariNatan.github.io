@@ -297,6 +297,7 @@ footer {
 footer > p {
   display: block; /*add */
   margin: 2rem;
+  font-size: 10pt;
 }
 
 footer i {
