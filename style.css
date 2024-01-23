@@ -239,6 +239,7 @@ a {
 
 .formacao-section-header > h2 {
     font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
     color: var(--main-purple);
 }
 
