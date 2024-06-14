@@ -257,7 +257,7 @@ a {
     margin-top: 30px;
 }
 
-.contato-section-header > h2 {
+.contato-section-header > h2, h1 {
     font-size: 6rem;
 }
 
@@ -290,14 +290,14 @@ footer {
   font-weight: 300;
   display: flex;
   justify-content: space-evenly;
-  padding: 0.25rem;
+  padding: 0.05rem;
   background: var(--main-purple);
-  border-top: 4px solid var(--main-purple);
+  border-top: 1px solid var(--main-purple);
 }
 
 footer > p {
   display: block; /*add */
-  margin: 2rem;
+  margin: 0.22rem;
   font-size: 8pt;
   
 }
