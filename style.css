@@ -1,415 +1,538 @@
-:root {
-  --main-white:  #f0efef;
-  --main-purple: #b0aac0;
-  --main-blue: #45567d;
-  --main-gray: #303841;
-  --main-padding: 14px;
-}
+/*
+    Folha de  estilo do site portifólio de uma página
+    @author OgliariNatan
+*/
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
-img {
-    border-radius: 50%;
-    max-width:250px;
-    max-height:250px;
-    width: auto;
-    height: auto;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
+/* Importação de Fontes (Google fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* 18px */
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--main-white);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  text-align: center;
+/* CSS RESET, remove todas as bordas e margens que os navegadores aplicam por definição */
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
-h1 {
-  font-size: 6rem;
+/* Rolagem dinamica entre as seções  */
+html {
+    scroll-behavior: smooth;
 }
 
-h2 {
-  font-size: 4.2rem;
+/* LAYOUT */
+.Container {
+    margin: 0 auto;
 }
 
-h3 {
-  font-size: 4.2rem;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: justify;
+.Botao {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: blanchedalmond;
+    padding: 10px 40px;
+    border: 2px solid #000;
+    border-radius: 15px;
 }
 
-h4, h5 {
-  font-size: 4.2rem;
-  font-family: 'Times New Roman', Times, serif;
-  text-align: center;
+
+/* Ajusta cabeçalho, display flexivel */
+.Flex {
+    display: flex;
+    justify-content: space-between;
 }
 
-
-
-
-ul {
-  list-style: none;
+.Flex2 {
+    display: flex;
+    align-items: center;
+    
 }
 
-a {
-  text-decoration: none;
-  color: var(--main-white);
-}
-
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--main-purple);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
-}
-
-.nav-list {
-  display: flex;
-  margin-right: 2rem;
-}
-
-.nav-list a {
-  display: block;
-  font-size: 2rem;
-  padding: 2rem;
-}
-
-.nav-list a:hover {
-  background: var(--main-gray);
-}
-
-.index-section, .formacao-section, .contato-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #000;
-  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-}
-
-.index-section > p {
-  font-size: 3rem;
-  font-weight: 200;
-  font-style: italic;
-  color: var(--main-purple);
-}
-
-.sobre-section {
+.Flex3, .Flex7 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--main-white);
-  }
-
-.sobre > h2 {
-    font-size: 2rem;
-    font-weight: 30;
-    color : var(--main-white)
-  }
-
-
-.sobre > p, .sobre h1 {
-    font-size: 2rem;
-    font-weight: 20;
-    font-style: italic;
-    color: var(--main-purple);
-}
-.split {
-    height: 100%;
-    width: 50%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-
-  /* Control the left side */
-  .left {
-    left: 0;
-    width: 25%;
-    background-color: var(--main-white);
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-
-  }
-
-  /* Control the right side */
-  .right {
-    right: 0;
-    width: 75%;
-    background-color: #000;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-  }
-
-  /* If you want the content centered horizontally and vertically */
-  .sobre {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  /* Style the image inside the centered container, if needed */
-  .sobre img {
-    border-radius: 50%;
-    max-width:150px;
-    max-height:150px;
-    width: auto;
-    height: auto;
-    padding: 20%;
-  }
-
-  #sobre-skills {
-    font-family: 'Raleway', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    color: var(--main-purple);
-    margin-top: 30px !important;
-  }
-
-  #sobre-skills td, #sobre-skills th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-
-  #sobre-skills th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: var(--main-purple);
-    color: var(--main-white);
 }
 
-  .projects-section-header > h2 {
-    font-size: 4rem;
-}
-
-  .projects-section-header > p {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 100;
-    font-style: italic;
-    color: var(--main-purple);
-}
-
-  .projects-section img {
-    max-width:250px;
-    max-height:250px;
-    margin-top: 30px;
-}
-
-/* ADD  */
-.certificado-pdf {
-    font-size: 18pt;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(218, 23, 49);
-
-}
-
-.formacao-section-header > h2 {
-    font-size: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    color: var(--main-purple);
-}
-
-.formacao-section-header > p {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 100;
-    font-style: italic;
-    color: var(--main-purple);
-}
-
-.formacao-section img {
-    max-width:250px;
-    max-height:250px;
-    margin-top: 30px;
-}
-
-.contato-section-header > h2, h1 {
-    font-size: 6rem;
-}
-
-.contato-section-header > p {
-    font-size: 2rem;
-    font-weight: 100;
-    font-style: italic;
-    color: var(--main-purple);
-}
-
-.contato-links {
+.Flex4 {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.contato-details {
-    padding : 15px;
+.Flex5 {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-.contato-links > a > img {
-    width:96px;
-    height:96px;
+
+.Flex6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-footer {
-  font-weight: 300;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0.05rem;
-  background: var(--main-purple);
-  border-top: 1px solid var(--main-purple);
+
+
+/* Topo do site */
+#topo {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
 }
 
-footer > p {
-  display: block; /*add */
-  margin: 0.22rem;
-  font-size: 8pt;
-  
+
+nav ul { /* Para ajustar ao tamanho da tela o menu */
+    list-style: none;
+    background-color: #343538;
+    height: 100vh; /* Ajusta o menu ao tamanho total da tela */
+    position: fixed;
+    top: 68px;
+    right: -100%;
+    width: 100%;
+    transition: all 0.5s;
+} 
+
+/* Esconde menu */
+
+#check:checked ~ ul {
+    right: 0;
 }
 
-footer i {
-  vertical-align: middle;
-}
-/* Remover abaixo */
-p { color: #0ecc8a;
-font-weight: 900;
-font-sie: 20px;
-font-family: Helvetica, Arial, sans-serif;
+nav ul li {
+    padding: 20px;
+    border-bottom: 1px solid #a9a9a9;
 }
 
-/*Inicio do fo-rmulario*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
 }
 
-body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: #272a37;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+/* repositorio */
+
+.Card {
+    margin-top: 25px;
+    width: 305px;
+    height: 520px;
+    background-color: #e8e8e8;
+    border: 1px solid #a1a1a1;
+    border-radius: 25px;
+    text-align: center;
+
 }
 
-form {
-  width: 100%;
-  max-width: 30rem;
+.Card img {
+    border-radius: 25px 25px 0px 0px;
 }
 
-label,
-input,
-textarea,
-button {
-  display: block;
+.Card h3 {
+    margin-top: 15px;
 }
 
-input,
-textarea,
-button {
-  width: 100%;
-  font: inherit;
-  padding: 1.25rem;
-  font-weight: 700;
+.Card p {
+    text-align: left;
+    color: #434343;
+    padding: 10px 30px 50px 30px;
 }
 
-input,
-textarea {
-  margin-bottom: 1rem;
-  color: white;
-  background: #323644;
-  border: 0.125rem solid transparent;
-  border-radius: 1.125rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+.Card a {
+    padding: 10px 100px;
+    border: 0;
 }
 
-input:hover,
-input:focus,
-textarea:hover,
-textarea:focus {
-  outline: none;
-  border-color: #1d90f5;
-  box-shadow: 0 0 0 0.3125rem #26344a;
+/* Rodape */
+address {
+    padding: 35px 10px 50px 10px;
+    background: url(img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+address a {
+    text-decoration: none;
+    color: #fff;
+}
+address img {
+    padding-top: 15px;
+}
+
+/* Rodapé */
+#copyright a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Smartphone Portrait >>>>>>>>>>>>>>>>>>>> */
+/* Cabeçalho */
+header {
+    height: 80px;
+    background-color: #d6d2d2;
+}
+#logo img {
+    width: 80px;
+    height: 80px;
+}
+
+#check{
+    display: none;
 }
 
 label {
-  margin-bottom: 0.5rem;
-  color: #84868f;
+    font-size: 3em;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+/* Destaque */
+main {
+    height: 75vh;/* Equivave a 75% da tela independe do dispositivo */
+    background: url(img/logo.jpg);
+    background-size: cover;
+    background-position: center;
+    /* color: #343538; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
 }
 
-textarea {
-  min-height: 12.5rem;
-  resize: vertical;
+main h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
 }
 
-button {
-  border: none;
-  border-radius: 99px;
-  color: white;
-  background: #1d90f5;
-  cursor: pointer;
-  transition: 0.3s;
+main h2 {
+    font-size: 1em;
+    margin: 20px 0px 50px 0px;
 }
 
-button:hover,
-button:focus {
-  outline: none;
-  background: #1c70d3;
+/* Sobre */
+#sobre {
+    padding: 50px 0px;
+    background: url(img/logo.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-button:disabled {
-  cursor: not-allowed;
-  background: #555b69;
+.destaqueSobre {
+    display: none; /* Remove da tela o identificador  o desenho do git*/
 }
 
-.success,
-.error {
-  text-align: center;
+#textoSobre {
+    color: #000;
+    padding: 10px 10px;
 }
 
-.success {
-  color: greenyellow;
+#textoSobre h2 {
+    margin-bottom: 10px;
 }
 
-.error {
-  color: tomato;
+
+.TopicosSobre {
+    margin-top: 20px;
+    /* font-size: 5em; */
+}
+.TopicosSobre img {
+    margin-right: 20px;
 }
 
-/*Fim do formulario*/
+/* Projetos */
+#projetos {
+    padding: 50px 10px;
+    /* background: url(img/logo.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+#projetos h2 {
+    margin-bottom: 10px;
+}
+#projetos p {
+    margin-bottom: 25px;
+}
+
+#video iframe {
+    width: 340px;
+    height: 191px;
+    border: 0;
+}
+
+
+/* Formação */
+
+#formacao {
+    padding: 50px 0px;
+    background: url(img/logo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#textoformacao {
+    color: #000;
+    padding: 0px 10px;
+}
+
+#textoformacao h1 {
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#textoformacao h2 {
+    /* margin-bottom: 10px; */
+    margin: 10px 10px 10px 10px;
+    /* text-align: center; */
+    
+}
+
+#textoformacao p {
+    margin-bottom: 10px;
+}
+
+#textoformacao span {
+    display: none;
+}
+
+#qrcode {
+    display: none;
+}
+/* Repositorio do github */
+#repositorio {
+    padding: 50px 0px;
+}
+
+#repositorio h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#todos {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#todos a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+/* repositorio */
+#repositorio {
+    padding: 50px 0px;
+}
+
+#repositorio h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#todos {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#todas a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+/* rodapé */
+
+#iconeLocal {
+    display: none;
+}
+
+#dados {
+    margin: 30px 0px 15px;
+}
+
+#googleMaps {
+    display: none;
+}
+
+footer {
+    padding: 50px;
+    background-color: #343538;
+    color: #fff;
+    text-align: center;
+}
+
+#social {
+    padding-bottom: 25px;
+}
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+    
+    /* Layout */
+    .Container {
+        max-width: 540px;
+    }
+    /* Destaque fundo */
+    main h1, main h2 {
+        text-shadow: #000 0.05em 0.05em 0.05em;
+    }
+    /* Projetos */
+    #video iframe {
+        width: 560px;
+        height: 315px;
+    }
+
+    /* Rodapé */
+
+    .Flex5 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #social {
+        margin: 0;
+    }
+}
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+   
+    /* Layout */
+    .Container {
+        max-width: 720px;
+    }
+    /* Destaque */
+    main {
+        height: 45vh;
+    }
+    main h1 {
+        font-size: 5.5em;
+    }
+    main h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+    
+    /* Layout */
+    .Container {
+        max-width: 960px;
+    }
+    /* Destaque */
+    main {
+        height: 75vh;
+    }
+}
+/* Computador pessoal>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width: 1200px) { /* se a tela for deste tamanho irá estilizar por aqui*/
+    
+    /* Layout */
+    .Container {
+        max-width: 1140px;
+    }
+    /* Cabeçalho */
+    header {
+        height: 120px;
+        background-color: #d6d2d2;
+    }
+    #logo img {
+        width: 115px;
+        height: 115px;
+        margin-top: 5px;
+    }
+
+    main {
+        background-attachment: fixed;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        margin-top: 40px;
+    }
+
+    nav ul li {
+        float: left;
+        border: 0;
+        
+    }
+    
+    nav ul li a {
+        color: #343538
+    }
+
+    nav ul li a:hover { /* Ao posicionar o mause em cima */
+        color: #227da1;
+    }
+
+    /* Sobre */
+    #sobre {
+        background-attachment: fixed;
+    }
+    .destaqueSobre {
+        display: inline;
+    }
+
+    .TopicosSobre img {
+        border-radius: 50%;
+        margin-right: 50px;
+    }
+    /* Projetos */
+    .Flex3 {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Formação */
+    #formacao {
+        background-attachment: fixed;
+    }
+
+    #textoformacao span {
+        display: inline;
+    }
+
+    #qrcode {
+        display: inline;
+    }
+    #qrcode img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Rodapé */
+    #iconeLocal {
+        display: inline;
+    }
+    #iconeMapa {
+        display: none;
+    }
+
+    #googleMaps {
+        display: inline;
+    }
+
+    .Flex6 {
+        flex-direction: row-reverse;
+    }
+}
