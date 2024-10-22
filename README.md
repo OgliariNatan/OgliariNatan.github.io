@@ -10,3 +10,11 @@
 
  <img src="https://img.shields.io/github/languages/top/OgliariNatan/OgliariNatan.github.io?color=violet&style=plastic">
  </p>
+
+
+<br>
+
+<p> Para adicionar imagens do google drive diretamente. <p> <br>
+```
+https://drive.google.com/thumbnail?id=
+```
