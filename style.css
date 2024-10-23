@@ -118,7 +118,7 @@ nav ul li a {
 .Card {
     margin-top: 25px;
     width: 305px;
-    height: 520px;
+    height: 550px;
     background-color: #e8e8e8;
     border: 1px solid #a1a1a1;
     border-radius: 25px;
@@ -338,6 +338,14 @@ main h2 {
     text-align: center;
     text-transform: uppercase;
 }
+#literarias h3 span {
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+/* #literarias p span {
+    text-transform: lowercase;
+    text-transform: capitalize;
+} */
 
 #direitos_autorais {
     font-size: 0.75em;
