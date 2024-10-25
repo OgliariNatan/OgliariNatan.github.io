@@ -516,6 +516,9 @@ footer {
     #projetos {
         background-attachment: fixed;
     }
+    #video {
+        padding-top: 150px;
+    }
 
     .Flex3 {
         flex-direction: row;
@@ -525,6 +528,10 @@ footer {
     /* Formação */
     #formacao {
         background-attachment: fixed;
+    }
+    #textoformacao {
+        /* padding-left: 50px; */
+        padding: 10px 30px;
     }
 
     #textoformacao span {
