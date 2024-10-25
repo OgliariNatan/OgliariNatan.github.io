@@ -249,11 +249,9 @@ main h2 {
 
 /* Projetos */
 #projetos {
-    padding: 50px 10px;
-    /* background-color: #dad6d6; */
-    /* background: url(img/logo.jpg); */
+    padding: 50px 0px;
     background: url(img/fundo_img.jpg);
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
 
@@ -275,7 +273,7 @@ main h2 {
 
 #formacao {
     padding: 50px 0px;
-    background: url(img/logo.jpg);
+    background: url(img/fundo_img.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -313,6 +311,9 @@ main h2 {
 /* Repositorio do github */
 #repositorio {
     padding: 50px 0px;
+    background-image: url(img/fundo_img.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #repositorio h2 {
@@ -335,7 +336,10 @@ main h2 {
 /* literarias */
 #literarias {
     padding: 50px 0px;
-    background-color: #a1a1a1;
+    /* background-color: #a1a1a1; */
+    background-image: url(img/fundo_img.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #literarias h3 {
@@ -508,6 +512,11 @@ footer {
         margin-right: 50px;
     }
     /* Projetos */
+
+    #projetos {
+        background-attachment: fixed;
+    }
+
     .Flex3 {
         flex-direction: row;
         align-items: center;
@@ -528,6 +537,16 @@ footer {
     #qrcode img {
         width: 150px;
         height: 150px;
+    }
+    /* Repositorio */
+    #repositorio {
+        background-attachment: fixed;
+    }
+
+    /* literarias */
+
+    #literarias {
+        background-attachment: fixed;
     }
 
     /* Rodapé */
