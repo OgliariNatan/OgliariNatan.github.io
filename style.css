@@ -12,7 +12,7 @@ body {
 }
 
 /* CSS RESET, remove todas as bordas e margens que os navegadores aplicam por definição */
-*{
+* {
     margin: 0;
     border: 0;
     padding: 0;
@@ -49,10 +49,11 @@ html {
 .Flex2 {
     display: flex;
     align-items: center;
-    
+
 }
 
-.Flex3, .Flex7 {
+.Flex3,
+.Flex7 {
     display: flex;
     flex-direction: column;
 }
@@ -85,20 +86,22 @@ html {
 }
 
 
-nav ul { /* Para ajustar ao tamanho da tela o menu */
+nav ul {
+    /* Para ajustar ao tamanho da tela o menu */
     list-style: none;
     background-color: #343538;
-    height: 100vh; /* Ajusta o menu ao tamanho total da tela */
+    height: 100vh;
+    /* Ajusta o menu ao tamanho total da tela */
     position: fixed;
     top: 68px;
     right: -100%;
     width: 100%;
     transition: all 0.5s;
-} 
+}
 
 /* Esconde menu */
 
-#check:checked ~ ul {
+#check:checked~ul {
     right: 0;
 }
 
@@ -158,6 +161,7 @@ address a {
     text-decoration: none;
     color: #fff;
 }
+
 address img {
     padding-top: 15px;
 }
@@ -174,12 +178,13 @@ header {
     height: 80px;
     background-color: #d6d2d2;
 }
+
 #logo img {
     width: 80px;
     height: 80px;
 }
 
-#check{
+#check {
     display: none;
 }
 
@@ -190,9 +195,11 @@ label {
     right: 15px;
     color: rgba(0, 0, 0, 0.5);
 }
+
 /* Destaque */
 main {
-    height: 75vh;/* Equivave a 75% da tela independe do dispositivo */
+    height: 75vh;
+    /* Equivave a 75% da tela independe do dispositivo */
     /* background: url(img/logo.jpg); */
     background: url(img/fundo_img.jpg);
     background-size: cover;
@@ -202,7 +209,7 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    
+
 }
 
 main h1 {
@@ -226,7 +233,8 @@ main h2 {
 }
 
 .destaqueSobre {
-    display: none; /* Remove da tela o identificador  o desenho do git*/
+    display: none;
+    /* Remove da tela o identificador  o desenho do git*/
 }
 
 #textoSobre {
@@ -243,6 +251,7 @@ main h2 {
     margin-top: 20px;
     /* font-size: 5em; */
 }
+
 .TopicosSobre img {
     margin-right: 20px;
 }
@@ -258,6 +267,7 @@ main h2 {
 #projetos h2 {
     margin-bottom: 10px;
 }
+
 #projetos p {
     margin-bottom: 25px;
 }
@@ -279,35 +289,41 @@ main h2 {
 }
 
 
-#textoformacao {
+#textoformacao,
+#textoformacao1 {
     color: #000;
     padding: 0px 10px;
 }
 
-#textoformacao h1 {
+#textoformacao h1,
+#textoformacao1 h1 {
     font-size: 3em;
     text-align: left;
     margin-bottom: 10px;
 }
 
-#textoformacao h2 {
+#textoformacao h2,
+#textoformacao1 h2 {
     /* margin-bottom: 10px; */
     margin: 10px 10px 10px 10px;
     /* text-align: center; */
-    
+
 }
 
-#textoformacao p {
+#textoformacao p,
+#textoformacao1 p {
     margin-bottom: 10px;
 }
 
-#textoformacao span {
+#textoformacao span,
+#textoformacao1 span {
     display: none;
 }
 
 #qrcode {
     display: none;
 }
+
 /* Repositorio do github */
 #repositorio {
     padding: 50px 0px;
@@ -347,10 +363,12 @@ main h2 {
     text-align: center;
     text-transform: uppercase;
 }
+
 #literarias h3 span {
     text-transform: lowercase;
     text-transform: capitalize;
 }
+
 /* #literarias p span {
     text-transform: lowercase;
     text-transform: capitalize;
@@ -388,16 +406,20 @@ footer {
 }
 
 /* Smartphone Landscape >>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 576px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-    
+@media (min-width: 576px) {
+    /* se a tela for deste tamanho irá estilizar por aqui*/
+
     /* Layout */
     .Container {
         max-width: 540px;
     }
+
     /* Destaque fundo */
-    main h1, main h2 {
+    main h1,
+    main h2 {
         text-shadow: #000 0.05em 0.05em 0.05em;
     }
+
     /* Projetos */
     #video iframe {
         width: 560px;
@@ -418,19 +440,23 @@ footer {
 }
 
 /* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 768px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-   
+@media (min-width: 768px) {
+    /* se a tela for deste tamanho irá estilizar por aqui*/
+
     /* Layout */
     .Container {
         max-width: 720px;
     }
+
     /* Destaque */
     main {
         height: 45vh;
     }
+
     main h1 {
         font-size: 5.5em;
     }
+
     main h2 {
         font-size: 2em;
     }
@@ -439,30 +465,36 @@ footer {
 
 
 /* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width: 992px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-    
+@media (min-width: 992px) {
+    /* se a tela for deste tamanho irá estilizar por aqui*/
+
     /* Layout */
     .Container {
         max-width: 960px;
     }
+
     /* Destaque */
     main {
         height: 75vh;
     }
 }
+
 /* Computador pessoal>>>>>>>>>>>>>>>>>>>>>> */
 
-@media (min-width: 1200px) { /* se a tela for deste tamanho irá estilizar por aqui*/
-    
+@media (min-width: 1200px) {
+    /* se a tela for deste tamanho irá estilizar por aqui*/
+
     /* Layout */
     .Container {
         max-width: 1140px;
     }
+
     /* Cabeçalho */
     header {
         height: 120px;
         background-color: #d6d2d2;
     }
+
     #logo img {
         width: 115px;
         height: 115px;
@@ -487,14 +519,15 @@ footer {
     nav ul li {
         float: left;
         border: 0;
-        
+
     }
-    
+
     nav ul li a {
         color: #343538
     }
 
-    nav ul li a:hover { /* Ao posicionar o mause em cima */
+    nav ul li a:hover {
+        /* Ao posicionar o mause em cima */
         color: #227da1;
     }
 
@@ -502,6 +535,7 @@ footer {
     #sobre {
         background-attachment: fixed;
     }
+
     .destaqueSobre {
         display: inline;
         padding-right: 20px;
@@ -511,11 +545,18 @@ footer {
         border-radius: 50%;
         margin-right: 50px;
     }
+
     /* Projetos */
+
+    iframe {
+        border-radius: 12px;
+        border: 0;
+    }
 
     #projetos {
         background-attachment: fixed;
     }
+
     #video {
         padding-top: 150px;
     }
@@ -529,22 +570,27 @@ footer {
     #formacao {
         background-attachment: fixed;
     }
-    #textoformacao {
+
+    #textoformacao,
+    #textoformacao1 {
         /* padding-left: 50px; */
         padding: 10px 30px;
     }
 
-    #textoformacao span {
+    #textoformacao span,
+    #textoformacao1 span {
         display: inline;
     }
 
     #qrcode {
         display: inline;
     }
+
     #qrcode img {
         width: 150px;
         height: 150px;
     }
+
     /* Repositorio */
     #repositorio {
         background-attachment: fixed;
@@ -560,6 +606,7 @@ footer {
     #iconeLocal {
         display: inline;
     }
+
     #iconeMapa {
         display: none;
     }
