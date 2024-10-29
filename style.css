@@ -378,6 +378,11 @@ main h2 {
     /* text-decoration-color: #227da1; */
 }
 
+#certificados h2 p a {
+    text-decoration: none;
+    color: #000;
+}
+
 
 
 /* Repositorio do github */
