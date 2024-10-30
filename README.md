@@ -18,4 +18,3 @@
 ```
 https://drive.google.com/thumbnail?id=
 ```
-
