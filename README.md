@@ -15,6 +15,6 @@
 <br>
 
 <p> Para adicionar imagens do google drive diretamente. <p> <br>
-```
+```html
 https://drive.google.com/thumbnail?id=
 ```
