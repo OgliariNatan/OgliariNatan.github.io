@@ -380,14 +380,14 @@ main h2 {
     /* text-align: center; */
 }
 
-#certificados h2 p {
+#certificados p {
     font-size: 0.8em;
-    text-align: center;
+    text-align: left;
     font-weight: 300;
     /* text-decoration-color: #227da1; */
 }
 
-#certificados h2 p a {
+#certificados p a {
     text-decoration: none;
     color: #000;
 }
