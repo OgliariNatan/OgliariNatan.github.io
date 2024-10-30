@@ -41,7 +41,11 @@ html {
 
 .Botao1 {
     text-decoration: none;
+    text-align: center;
     color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1em;
     font-weight: 500;
     background-color: rgb(204, 194, 207);
@@ -132,9 +136,14 @@ nav ul li a {
     margin-top: 20px;
 }
 
+.Certificados h3 {
+    /* text-transform: lowercase; */
+    text-transform: uppercase;
+}
+
 .Certificados p {
     font-size: 0.8em;
-    padding-bottom: 20px;
+    padding: 10px 10px;
 }
 
 .Certificados a {
