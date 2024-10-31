@@ -37,6 +37,17 @@ html {
     padding: 10px 40px;
     border: 2px solid #000;
     border-radius: 15px;
+
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #7a15b4;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+.Botao:hover {
+    box-shadow: inset 0 0 0 50px #7a15b4;
 }
 
 .Botao1 {
@@ -48,10 +59,14 @@ html {
     align-items: center;
     font-size: 1em;
     font-weight: 500;
-    background-color: rgb(204, 194, 207);
+    background-color: none;
     padding: 10px 10px;
     border: 2px solid #000;
     border-radius: 15px;
+}
+
+.Botao1:hover {
+    box-shadow: inset 0 0 0 50px #a1a1a1;
 }
 
 /* Ajusta cabeçalho, display flexivel */
@@ -90,6 +105,11 @@ html {
     justify-content: space-around;
 }
 
+.Flex7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
 /* Topo do site */
@@ -104,8 +124,8 @@ nav ul {
     /* Para ajustar ao tamanho da tela o menu */
     list-style: none;
     background-color: #343538;
-    height: 100vh;
     /* Ajusta o menu ao tamanho total da tela */
+    height: 100vh;
     position: fixed;
     top: 68px;
     right: -100%;
@@ -347,6 +367,12 @@ main h2 {
     /* margin-bottom: 10px; */
     margin: 10px 10px 10px 10px;
     /* text-align: center; */
+}
+
+#textoformacao1 h2 {
+    /* margin-bottom: 10px; */
+    padding-top: 70px;
+    /* text-align: center; */
 
 }
 
@@ -365,6 +391,11 @@ main h2 {
 }
 
 /* certificados */
+
+.Flex7 {
+    flex-direction: column;
+}
+
 #certificados {
     padding: 50px 0px;
     background: url(img/fundo_img.jpg);
@@ -496,6 +527,11 @@ footer {
     #video iframe {
         width: 560px;
         height: 315px;
+    }
+
+    /* Certificados */
+    .Flex7 {
+        flex-direction: row;
     }
 
     /* Rodapé */
