@@ -303,6 +303,10 @@ main h2 {
     margin-bottom: 10px;
 }
 
+#textoSobre p {
+    text-align: justify;
+}
+
 
 .TopicosSobre {
     margin-top: 20px;
