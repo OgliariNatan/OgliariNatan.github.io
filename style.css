@@ -730,4 +730,12 @@ footer {
     .Flex6 {
         flex-direction: row-reverse;
     }
+
+    /* @media print {
+        background: none;
+        color: #000;
+
+    } */
+
+
 }
