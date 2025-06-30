@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogliari Natan</title>
+    <meta name="description" content="Portifólio do Natan Ogliari">
+    <link rel="icon" href="img/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-900">
+    <!-- Navbar -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <img src="img/17915303.jpg" alt="hal 9000" class="w-14 h-14 rounded-full">
+            <nav>
+                <ul class="flex gap-6 text-sm font-medium">
+                    <li><a href="#inicio" class="hover:text-purple-600 transition">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-purple-600 transition">Sobre</a></li>
+                    <li><a href="#projetos" class="hover:text-purple-600 transition">Projetos</a></li>
+                    <li><a href="#formacao" class="hover:text-purple-600 transition">Formação</a></li>
+                    <li><a href="#literarias" class="hover:text-purple-600 transition">Obras Literárias</a></li>
+                    <li><a href="#contato" class="hover:text-purple-600 transition">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="min-h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
+        style="background-image: url('img/fundo_img.jpg');">
+        <div class="px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg">Olá, sou o Natan Ogliari</h1>
+            <p class="mt-4 text-lg md:text-2xl">Desenvolvedor de hardware explorando o mundo web, banco de dados e
+                Python.</p>
+            <a href="https://github.com/OgliariNatan" target="_blank"
+                class="mt-6 inline-block bg-purple-600 text-white px-6 py-2 rounded-lg shadow hover:bg-purple-700 transition">GitHub</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Sobre -->
+        <section id="sobre" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+                <img src="img/Logo_size.png" alt="Perfil" class="w-72 mx-auto">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4"><i class="fas fa-thin fa-circle-info"></i> Sobre Mim</h2>
+                    <p class="text-justify leading-relaxed">Sou Natan Ogliari, engenheiro de software em formação,
+                        técnico em eletroeletrônica e apaixonado por IoT e desenvolvimento de hardware. Atualmente
+                        estudo novas linguagens de programação e exploro projetos inovadores em software e hardware.
+                        Contribuo com projetos no GitHub e compartilho minha trajetória no LinkedIn e Currículo Lattes.
+                        Estou sempre aberto a colaborações desafiadoras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Musica para alma -->
+        <section id="projetos" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6">Músicas para a alma.</h2>
+                <p class="mb-6 text-gray-700">
+                <p>Tenho por convicção que muito do que somos é o que consumimos, dizemos e nossas posturas, por isso e
+                    muito mais que tenho uma preferência especial por músicas nativistas, pois elas tranquilizam minha
+                    alma e me levam a refletir sobre meu papel no mundo como cidadão, além de me fazer pensar sobre o
+                    futuro que desejo para meus descendentes.</p>
+                </p>
+
+                <div class="flex justify-center">
+                    <iframe src="https://open.spotify.com/embed/playlist/5S4VpqEpjaz8OE2kQLhA6U?utm_source=generator"
+                        width="600" height="352" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy" class="rounded-lg shadow-lg">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projetos" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6"><i
+                        class="fas fa-thin fa-diagram-project text-green-600 text-xl"></i> Projetos em Destaque
+                </h2>
+                <p class="mb-6 text-gray-700">Explore meus repositórios no GitHub com projetos de software, hardware e
+                    automação.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Projeto Exemplo -->
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <img src="img/samba.jpg" alt="Servidor Samba" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold">Servidor Linux Samba</h3>
+                            <p class="mt-2 text-gray-600">Repositório para a configuração de um servidor de arquivos com
+                                Samba4.</p>
+                            <a href="https://github.com/OgliariNatan/servidor-file-samba4"
+                                class="text-purple-600 hover:underline inline-block mt-3">Ver no GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section id="formacao" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6"><i class="fas fa-thin fa-user-graduate"></i> Formação</h2>
+                <ul class="list-disc list-inside text-lg space-y-2">
+                    <li>Técnico Integrado em Eletroeletrônica - IFC Videira</li>
+                    <li>Uma boa pasagem pela Engenharia Eletrônica, seis semestres</li>
+                    <li>Graduando em Engenharia de Software - UNOPAR (6º semestre)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Obras Literárias -->
+        <section id="literarias" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6"> <i
+                        class="fas fa-sharp-duotone fa-thin fa-book text-blue-600 text-xl"></i> Obras
+                    Literárias
+                </h2>
+                <p class="mb-6 text-gray-700">Livros que moldaram minha essência e influenciaram meu crescimento
+                    pessoal.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Livro Exemplo -->
+                    <div class="bg-white shadow rounded-lg overflow-hidden">
+                        <img src="https://drive.google.com/thumbnail?id=1oY0UNtSMbeN2310a3sxoVF7yVd7oOiWd"
+                            alt="Rápido e Devagar" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold">Rápido e Devagar</h3>
+                            <p class="mt-2 text-gray-600">Autor: Daniel Kahneman<br>Publicado em 2011.</p>
+                            <a href="https://pt.wikipedia.org/wiki/R%C3%A1pido_e_devagar:_Duas_formas_de_pensar"
+                                class="text-purple-600 hover:underline inline-block mt-3">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Botão de volta ao topo -->
+    <a href="#inicio"
+        class="fixed bottom-5 right-5 bg-purple-600 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition"
+        title="Voltar ao topo">
+        <img src="img/seta-para-cima.png" alt="topo do site" class="w-6 h-6">
+    </a>
+
+    <!-- Script: Pague-me um café -->
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="natanogliag" data-description="Support me on Buy me a coffee!" data-message="Pague-me um café?"
+        data-color="#BD5FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
+    <!-- Rodapé -->
+    <address class="bg-gray-100 py-12 text-gray-700">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div id="contato" class="text-center">
+                <a href="https://api.whatsapp.com/send?phone=5549012345678" target="_blank"
+                    class="inline-flex items-center gap-2 hover:text-green-600">
+                    <img src="img/whatsapp.jpg" alt="whatsapp" class="w-6 h-6">
+                    <p>(11) 01234-5678</p>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="https://maps.app.goo.gl/oU6gMauBJi6S8DuQ8" target="_blank">
+                    <img src="img/mapa.png" alt="Mapa" class="mx-auto w-6 h-6">
+                </a>
+                <img src="img/local.png" alt="local" class="mx-auto w-6 h-6">
+                <p>Rua que não existe, 9876</p>
+                <p>Santo</p>
+                <p>Malta</p>
+                <a href="mailto:meueail@gmail.com?subject=ContatoSite"
+                    class="inline-flex items-center gap-2 hover:text-blue-600">
+                    <img src="img/o-email.png" alt="email" class="w-6 h-6">
+                    <p>teste@gmail.com</p>
+                </a>
+                <p id="dados" class="text-xs mt-2">👀 endereço e dados de contatos fictícios</p>
+            </div>
+            <div id="googleMaps" class="hidden md:block">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d413504.1921157694!2d14.048711578411739!3d35.9347000616361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e45281d8647c5%3A0xf582d86136be4239!2sMalta!5e0!3m2!1spt-BR!2sbr!4v1727447705344!5m2!1spt-BR!2sbr"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="rounded shadow"></iframe>
+            </div>
+        </div>
+    </address>
+
+    <footer class="bg-gray-900 text-white py-15"></footer>
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <div id="copyright" class="text-lg">
+            <p>&#169; <a href="https://github.com/OgliariNatan" target="_blank" class="hover:underline">by
+                    OgliariNatan</a></p>
+        </div>
+        <div id="social" class="flex gap-8 mt-6 md:mt-0 justify-center md:justify-end w-full">
+            <a href="https://www.linkedin.com/" target="_blank">
+                <img src="img/linkedin.png" alt="linkedin" class="w-10 h-10">
+            </a>
+            <a href="https://github.com/OgliariNatan" target="_blank">
+                <img src="img/github.png" alt="GitHub" class="w-10 h-10">
+            </a>
+        </div>
+    </div>
+    </footer>
+
+
+    </footer>
+</body>
+
+</html>
