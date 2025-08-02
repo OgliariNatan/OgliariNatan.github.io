@@ -3,761 +3,1218 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ogliari Natan</title>
-    <meta name="description" content="Portifólio do Natan Ogliari">
-    <!--Adiciona uma descrição que irá aparecer nos buscadores-->
-    <link rel="icon" href="img/Logo.png"> <!--adiciona uma imagem na aba do navegador-->
-    <link rel="stylesheet" href="style.css">
-    <!-- APARA ABAIXO -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5785369953442051"
-        crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W26TLZT3ZD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-W26TLZT3ZD');
-    </script>
+    <title>Natan Ogliari - Desenvolvedor & Engenheiro</title>
+    <meta name="description"
+        content="Portfólio do Natan Ogliari - Desenvolvedor de hardware explorando o mundo web, banco de dados e Python">
+    <link rel="icon" href="img/Logo_size.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-gray-50 text-gray-900 smooth-scroll">
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="img/17915303.jpg" alt="Natan Ogliari" class="w-10 h-10 rounded-full ring-2 ring-white/20">
+                    <span class="text-white font-semibold text-lg">Natan Ogliari</span>
+                </div>
 
-    <!-- Cabeçalho -->
-    <header id="inicio">
-        <div class="Container Flex "><!-- Adiciona varias classes separadas por espaço -->
-            <div id="logo">
-                <img src="img/17915303.jpg"
-                    alt="hal 9000"><!-- atributo (hal 9000) responsavel pela eibição nos mecanismo de busca por imagens-->
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#inicio"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Início</a>
+                        </li>
+                        <li><a href="#sobre"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Sobre</a>
+                        </li>
+                        <li><a href="#projetos"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Projetos</a>
+                        </li>
+                        <li><a href="#formacao"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Formação</a>
+                        </li>
+                        <li><a href="#certificados"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Certificações</a>
+                        </li>
+                        <li><a href="#literarias"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Literatura</a>
+                        </li>
+                        <li><a href="#contato"
+                                class="text-white/90 hover:text-white transition-colors duration-200 font-medium">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
-            <nav><!-- Menu -->
-                <input type="checkbox" id="check">
-                <label for="check">&#x268c;</label>
+        </div>
 
-                <ul class="">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#formacao">Formação</a></li>
-                    <li><a href="#literarias">Obras Literarias</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden glass-effect">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#inicio" class="block text-white/90 hover:text-white py-2 transition-colors">Início</a>
+                <a href="#sobre" class="block text-white/90 hover:text-white py-2 transition-colors">Sobre</a>
+                <a href="#projetos" class="block text-white/90 hover:text-white py-2 transition-colors">Projetos</a>
+                <a href="#formacao" class="block text-white/90 hover:text-white py-2 transition-colors">Formação</a>
+                <a href="#certificados"
+                    class="block text-white/90 hover:text-white py-2 transition-colors">Certificações</a>
+                <a href="#literarias" class="block text-white/90 hover:text-white py-2 transition-colors">Literatura</a>
+                <a href="#contato" class="block text-white/90 hover:text-white py-2 transition-colors">Contato</a>
+            </div>
         </div>
     </header>
 
-    <!-- Destaque -->
-    <main>
-        <div class="Container">
-            <h1>Olá, sou o Natan Ogliari</h1>
-            <h2> Sou desenvolvedor de hardware e agora estou me aventurando no desenvolvimento web, banco de dados e
-                automações com Python.
-            </h2>
-            <a href="https://github.com/OgliariNatan" target="_blank" class="Botao">GitHub</a>
-        </div>
-    </main>
-
-    <!-- Sobre -->
-    <section id="sobre">
-        <div class="Container Flex2">
-            <div class="destaqueSobre">
-                <img src="img/Logo_size.png" alt="esta">
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60"
+                viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <g fill="%23ffffff" fill-opacity="0.1">
+                        <circle cx="30" cy="30" r="2" />
+                    </g>
+                </g></svg>');">
             </div>
-            <div class="textoSobre">
-                <h2> Natan Ogliari </h2>
-                <p> Engenheiro de Software em Formação com formação em técnico em eletroeletrônica, apaixonado por IoT e
-                    desenvolvimento de Hardware, <br> sou o Natan Ogliari, um estudante de engenharia de software com
-                    uma paixão ardente por tecnologia e inovação.
-                    Atualmente, estou aprofundando meus conhecimentos em novas linguagens de programação e explorando as
-                    fronteiras da Internet das Coisas (IoT) e do design de hardware. Minha jornada acadêmica e
-                    profissional
-                    é marcada por uma busca constante pelo conhecimento e pela excelência. No GitHub, sou conhecido como
-                    OgliariNatan, onde contribuo ativamente para projetos que refletem meu interesse em soluções de
-                    software
-                    e hardware. <br> No LinkedIn, minha presença é uma extensão do meu compromisso profissional,
-                    destacando
-                    minhas habilidades em Frontend, Backend e DevOps. Meu Currículo Lattes, por sua vez, é um registro
-                    detalhado da minha trajetória acadêmica e das contribuições para a ciência e tecnologia. Projetos
-                    como
-                    Template-UNOPAR, servidor-file-samba4, e zeniteSolar são apenas alguns exemplos do meu trabalho
-                    colaborativo e da minha habilidade em trazer ideias inovadoras para a realidade. Seja criando
-                    templates
-                    em LaTeX para relatórios acadêmicos ou desenvolvendo código para automação de relatórios em Python,
-                    busco sempre entregar soluções que combinam funcionalidade e eficiência. Estou sempre aberto a
-                    colaborações e interessado em discutir novas ideias de projetos, especialmente aqueles que desafiam
-                    os
-                    limites do que é possível em hardware e IoT. Se você tem um projeto em mente e precisa de uma mente
-                    criativa e técnica, não hesite em me contatar.</p>
+        </div>
 
-                <!-- <div class="TopicosSobre Flex2">
-                    <img src="img/python1.png" alt="code">
-                    <p>Python</p>
+        <div class="text-center text-white px-4 relative z-10">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-white/20 overflow-hidden">
+                    <img src="img/Logo_size.png" alt="Natan Ogliari" class="w-full h-full object-cover">
                 </div>
-                <div class="TopicosSobre Flex2">
-                    <img src="img/solução.png" alt="code">
-                    <p>Solução</p>
-                </div>
-                <div class="TopicosSobre Flex2">
-                    <img src="img/solução.png" alt="code">
-                    <p>Solução</p>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projetos">
-        <div class="Container Flex3">
-            <div id="textoSite">
-                <h2>Músicas para a alma.</h2>
-                <p>Tenho por convicção que muito do que somos é o que consumimos, dizemos e nossas posturas, por isso e
-                    muito mais que tenho uma preferência especial por músicas nativistas, pois elas tranquilizam minha
-                    alma e me levam a refletir sobre meu papel no mundo como cidadão, além de me fazer pensar sobre o
-                    futuro que desejo para meus descendentes.</p>
-            </div>
-            <div id="video">
-                <iframe src="https://open.spotify.com/embed/playlist/5S4VpqEpjaz8OE2kQLhA6U?utm_source=generator"
-                    width="150" height="352" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"></iframe>
-
-                <!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xbZaTACQOdH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Formação -->
-    <section id="formacao">
-        <div class="Container Flex2">
-            <div id="textoformacao">
-                <h1>Formações:</h1>
-                <h2>Técnico integrado em eletroeletrônica</h2>
-                <p>Técnico integrado em eletroeletrônica pelo IFC - câmpus videira, <span>também poderá conferir através
-                        de um QRCODE.</span></p>
-                <br>
-                <a href="https://drive.google.com/file/d/15W-9sLs9ua-t34gXlpYzpalAZ-cf1g5O/view" target="_blank"
-                    class="Botao">DIPLOMA</a>
-            </div>
-            <div id="qrcode">
-                <img src="img/qrcode.png" alt="qrcode">
             </div>
 
-            <div id="textoformacao1">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Olá, sou o <span class="block text-white bg-white bg-clip-text text-transparent">Natan
+                    Ogliari</span>
+            </h1>
 
-                <h2>Graduando em engenharia de software pela UNOPAR</h2>
-                <p> Atualmemte esta no 6º semestre da engenharia de software pela UNOPAR</p>
-                <br>
-                <a href="https://github.com/ENGENHARIA-DE-SOFTWARE-UNOPAR/.github/blob/main/profile/Matriz%20curi.%20-%20ENG%20software.pdf"
-                    target="_blank" class="Botao">Matriz curricular</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificados">
-        <div class="Container">
-            <h2>Certificados:</h2>
-            <p>Confira as certificações realizadas, para obter habilidades e se habilitar para o
-                mercado de trabalho. Algumas das certificações são as disponibilizadas pela UNOPAR como <a
-                    href="https://blog.unopar.com.br/trilhas-de-carreira/#Conheca_as_Trilhas_de_Carreira">trilha e
-                    carreira.</a>
+            <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Desenvolvedor de hardware explorando o mundo web, banco de dados e Python
             </p>
 
-            <div class="Certificados Flex7">
-                <h3>IOT e Programação de Sensores</h3>
-                <p>Apresentar técnicas e embasamento para que alunos de diferentes graduações possam trabalhar com a
-                    programação de objetos na internet das coisas.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/OgliariNatan" target="_blank"
+                    class="inline-flex items-center px-8 py-3 bg-white text-purple-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fab fa-github mr-2"></i>
+                    GitHub
+                </a>
+                <a href="#sobre"
+                    class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300">
+                    Saiba mais
+                </a>
+            </div>
+        </div>
 
-                <a href="https://drive.google.com/file/d/1d5MI1Je83O1R-ZshPjR9ALq4nda7EkeS/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Análise de Dados com Python</h3>
-                <p>Apresentar recursos de análise de dados com python para alunos de diferentes graduações por ser uma
-                    habilidade em alta no mercado de trabalho.</p>
-                <a href="https://drive.google.com/file/d/1WLgOo77Q3zU3lo5QijTAqltP6epdqMhX/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>PROCESSO DA CRIATIVIDADE</h3>
-                <p>O processo criativo é o caminho que a sua mente percorre desde a identificação de um problema ou
-                    desafio até a geração de soluções inovadoras e a expressão da sua criatividade. Em outras palavras,
-                    é o método que você utiliza para transformar uma ideia em realidade.</p>
-                <a href="https://drive.google.com/file/d/1KmHL0fYWLndupQIxN4GzeJFdmvVj1rec/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>GESTÃO DE PROJETOS</h3>
-                <p>Prepare-se para uma das habilidades mais requisitadas nas diferentes áreas do mercado: o
-                    gerenciamento de
-                    projetos. A Trilha possibilita a compreendeção de técnicas de gerenciamento de escopo, tempo,
-                    custos, qualidade e
-                    pessoas em projetos, além de modelos de monitoramento e avaliação. Apesar de não ter foco em
-                    certificações
-                    específicas, os conteúdos da Trilha podem auxiliar na obtenção das certificações e acreditações mais
-                    reconhecidas
-                    do mercado.</p>
-                <a href="https://drive.google.com/file/d/1eH21zc3ljxnA2AaMgr7JGffvX7LefHNy/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Empreendedorismo e Inovação</h3>
-                <p>Tire as suas ideias do papel! Esta Trilha é destinada para estudantes e profissionais de todas as
-                    áreas que desejam montar o próprio negócio e apresenta os principais fundamentos, processos e
-                    tendências relacionadas ao
-                    ecossistema da inovação.</p>
-                <a href="https://drive.google.com/file/d/1NP1xhqTYFcjvg5YMa57GEBqEYq9fy83G/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Empreender Desafios e Oportunidades </h3>
-                <p>Através dos três pilares que compõem essa Trilha, buscamos ferecer conteúdos rápidos e fáceis de
-                    serem seguidos, auxiliando as pessoas a repensarem seus negócios diante da crise.</p>
-                <a href="https://drive.google.com/file/d/15dXyNuwubGA3E5FsnYk7sgHbH5kDG2jI/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>TECNOLOGIA, DIREITO DIGITAL E PROPRIEDADE INTELECTUAL</h3>
-                <p>Prepare-se para ser um profissional do futuro. O mercado de trabalho tem passado por uma
-                    transformação digital que exige profissionais capazes de compreender os aspectos legais e
-                    regulatórios das inovações tecnológicas e dos novos modelos de negócios, seja no varejo, na saúde,
-                    na indústria ou na educação.</p>
-                <a href="https://drive.google.com/file/d/1hYwzq_9zBrXsNm1WPyQ-6pgb9cAgPOG7/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Inovação em Gestão de Pessoas</h3>
-                <p>A gestão de pessoas não se limita somente ao RH. Esta Trilha busca preparar profissionais com
-                    competências e habilidades em liderança e relações interpessoais para qualquer nível de carreira.
-                </p>
-                <a href="https://drive.google.com/file/d/1Ju2RZ7MbVNRIumbhDU7l-j-fhNQeU5Gi/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>INGLÊS: VOCABULÁRIO ESSENCIAL</h3>
-                <p> O domínio de conceitos básicos da língua inglesa é fudamental em um mercado de trabalho cada vez
-                    mais globalizado. Esta Trilha apresenta o vocabulário essencial para a construção de textos no tempo
-                    presente e passado.
-                </p>
-                <a href="https://drive.google.com/file/d/1MIiTRMBMSNhfUesqfBTDxxnono1ny6u2/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>COMUNICAÇÃO EM NEGÓCIOS E MÍDIAS SOCIAIS</h3>
-                <p> Cada vez mais as instituições, independentes do porte, despertam para a importância da prática da
-                    comunicação corporativa para a promoção da reputação, visibilidade e credibilidade junto aos
-                    clientes, consumidores e opinião pública. A Trilha busca formar um profissional capaz de atuar na
-                    gestão da comunicação em diferentes mídias, com destaque para os meios digitais.
-                </p>
-                <a href="https://drive.google.com/file/d/1MaA9TUa2WogjlAL5fYfkYvHDQ8k3LWlJ/view" class="Botao1"
-                    target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>CURSO DE EXTENSÃO INDÚSTRIA 4.0</h3>
-                <p> O curso apresenta os conceitos de tecnologias avançadas aplicados ao contexto da Gestão de
-                    operações. Os quatro smarts da Indústria 4.0: Smart Manufacturing, Smart Products and Services,
-                    Smart Working e Smart Supply Chain e Gestão da Qualidade na Indústria 4.0. Com William Franco,
-                    Mestre pela PUC Campinas, docente e Gerente Executivo do CoE (Centro de Excelência) da Indústria na
-                    Natura &Co e Néstor Fabián Ayala, professor PUCRS.
-                </p>
-                <a href="https://drive.google.com/file/d/126zXCclVDifhzyWSjHmKJkwEh9mhk_Vs/view?usp=sharing"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Learning with Python</h3>
-                <p>This course dives into the basics of computer science in terms of variables, conditionals, loops, and
-                    functions using the programming syntax of Python. Learn how to apply this language to solve various
-                    problems and use its frameworks/libraries/packages for different contexts. Click here for a short
-                    tutorial that aims to facilitate access to the course for non-Portuguese speaking users.
-                </p>
-                <a href="https://drive.google.com/file/d/1PkUNYwx3GLsI_eVSPTMyFiNvy2FmpmvV/view?usp=sharing"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Curso de NR10: Segurança em Instalações e Serviços em Eletricidade</h3>
-                <p>O objetivo é capacitar os trabalhadores para prevenir acidentes e garantir a segurança e a saúde de
-                    todos.
-                </p>
-                <a href="https://drive.google.com/file/d/1cYVtHyKs4K3a77gS_MfIy0n9KQnnt-RL/view?usp=sharing"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Curso de python: Apps para android, ios, linx, win e mac</h3>
-                <p>Desenvolvimento de Apps Comerciais com Python e Kivy para Android, iOS, Windows, Linux e MacOS
-                    (Básico ao Avançado) </p>
-                <a href="https://drive.google.com/file/d/1DUP--fYGpGgq86nQOSwl9T3oYKBu-rcl/view?usp=sharing"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Internet das coisas (IoT) aplicada para resolução de
-                    desafios</h3>
-                <p>A utilização da IoT na solução de problemas da administração pública. </p>
-                <a href="https://drive.google.com/file/d/1AtqBoeJintynNz1RNBHls2f2dKLZE4x9/view?usp=drive_link"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-            <div class="Certificados Flex7">
-                <h3>Curso de Extensão DEEP LEARNING</h3>
-                <p>Técnica de Inteligência Artificial (IA) que permite que computadores aprendam e tomem decisões com
-                    base em dados não estruturados e não rotulados</p>
-                <a href="https://drive.google.com/file/d/1FFc7zxTFAxgKRko8Nsb8x4F4tB8hpuyq/view?usp=drive_link"
-                    class="Botao1" target="_blank"><img src="img/certificado.png" alt="img_cert"></a>
-            </div>
-
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
     </section>
 
-    <!-- Repositorio GitHub -->
-    <section id="repositorio">
-        <div class="Container">
-            <h2>Projetos do GitHub:</h2>
-            <div class="Cards Flex4">
-                <div class="Card">
-                    <img src="img/samba.jpg" width="305" height="165" alt="repo_git">
-                    <h3>Servidor-linux-samba</h3>
-                    <p>Respositorio para a configuração de um servidor de arquivos linux com samba4.</p>
-                    <a href="https://github.com/OgliariNatan/servidor-file-samba4" target="_blank" class="Botao">Saiba
-                        +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://github.com/OgliariNatan/Fonte_Linear_simetrica_5V/blob/master/Fotos/Arquivo_000.jpeg?raw=true"
-                        width="305" height="165" alt="repo_git">
-                    <h3>Fonte linear 5V</h3>
-                    <p>Respositório para a confecção de uma fonte linear simetrica de 5VoltsCC.</p>
-                    <a href="https://github.com/OgliariNatan/Fonte_Linear_simetrica_5V" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="img/prog.jpeg" alt="repo_git">
-                    <h3>Prog 2</h3>
-                    <p>Respositório para a unidade curricular de programaçãoII em C.</p>
-                    <a href="https://github.com/OgliariNatan/Programacao_de_Computadores_II" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://www.latex-project.org/img/latex-project-logo.svg" width="305" height="165"
-                        alt="repo_git">
-                    <h3>Template em LATEX para relatórios de aulas práticas</h3>
-                    <p>Um template em LATEX para relatórios de aulas práticas no modelo da UNOPAR. este modelo é
-                        compilado no software Atom.</p>
-                    <a href="https://github.com/ENGENHARIA-DE-SOFTWARE-UNOPAR/Template-UNOPAR" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://avatars.githubusercontent.com/u/156432252?s=200&v=4" width="305" height="200"
-                        alt="repo_git">
-                    <h3>ENGENHARIA DE SOFTWARE - UNOPAR</h3>
-                    <p>Organização para armazenar os trabalhos do curso bacharelado em Engenharia de Software da
-                        instituição UNOPAR. <br>A quem interessar e quiser contribuir, será muito bem vindo.</p>
-                    <a href="https://github.com/ENGENHARIA-DE-SOFTWARE-UNOPAR/Template-UNOPAR" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Kivy_logo.png" width="305"
-                        height="165" alt="repo_git">
-                    <h3>Aplicações em Python com a interface gráfica Kivy</h3>
-                    <p>Repositorio para aprender a desenvolver aplicações gráficas com a linguagem kivy.</p>
-                    <a href="https://github.com/OgliariNatan/applications-with-kivy-in-python" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAMAAAAt85rTAAAA51BMVEX+/v7uMWdavedVc7HuLWXuKmNUu+buKGJVb67+/P1SdLJawOlRuubuLWbtH170+v399vj97vP73ubwT3tyxer86e75wM/1mrH98/bxYYf1kqz60t34t8js9vvO6vdmwejh8vq+4/T3qr772OH5x9TvN273prz0iqXvRXXzfpzwVHyNz+2w3fKl2PDZ7/mT0u7zdZfNQHhYotPycJLxXIb3n7j4ws/gory/TYRzm8rVPXSZW5XcOXB8ZKBZrNrERn5WfrhuaaajVY5WisGCYJzbOnFYl8yvToeNW5b4KmBbfLbCXIzs4+6KqMRnAAAInklEQVR4nO2di3qiOBSABUOprSioeEPrFe9T7drOzrYzO5ed2bnsvv/zLCjKHQKhCXHzPwBf/o/knJyQhEKBwWAwGAwGg8FgMBgMBoPBYDAYDAbj/4esKiXSbXhNJnO907xcw2mrLgJxoZBuxyuh7XQJcBxXUUm35BWQ1Vm9IkqGHid0Lu8NlrSWXjFfnok4u7gxqMwX4kmPA/UJ6fZkjDxb2XrGC5yTblCmlNpPUsWhx0l6k3SbMsQYe/WKxDkBqwsKMTXn2Dv10CXpVmVHs+7TM5Jgj3SzMkKe1it+PUPwMnpoW5tXhAA9I0mQblomNJcLMUjPGIIt0m3LAGWuBww+q4fWSLcOGVlbeTKDq4dSPwRrcz1w8Fk9dCmTbiAa7bE3sXt6KOVJotnhwgbfAWmhkW4iCrXH4NRgI+xprnW1TkhqcAzBOb2lYGlWj3l9dFcS0w4X68cJHdLNTIsaMjHzUHki3dCUGNEFQs8QpDOGlqbx0cUSpDLLl7p6ZO6zAQvSbU2DuoicujihcrlpGlYXBfXQKenWJmccn/wcgvRNY5bRU0839JVKsNnBQpzTFUTbs0WC7snRVyrNhQTd00SiK8b0oLODBaCqFpS7YkI/umpBbQmS+lFVCybJ7mfAjHSzoamtUvhJOjVBtAZbPLhfIGSMqfarr9z+OLR9Gj+474LV+1GDX9+/vkQEvTTjz0DcxT66OloPrq748pbkO+xFrVtHETuP6W8avKHH81drgoLThNMzh2D0g6t35bJpZwq+weMSRLr4YgL0qOf279aWnSk4wqXjY5LaL3LFsL9Z3zr8GkNsQh6m9dR+nNgNfaw59ngbcj10mja+mFTeBj90+Oaq7NQzINVDlXT57yQY/GX3rlF22/FXA1JpcInw/jhJCiolhtuB5+2ZQ5BQkpglWp7wErQeMzykdZ/gmoCc0T93SH6csGt7nljdlgP0eL68IeFXaqGMP84Mou4Fp+rIN/hOgnckBDXY1fkwKu5NsMMtH/T2DoJ9An5y6gnaWdD15XPkjy22IAm/9BOYM/aKWnU08GY+VxAl4NdNvP7ixVHt9tcReobgFr/gOMn6fIjgeZ/2cB0SXE49FH8QRQ4wnDnVPk5kqpuI0XcUxB5E26H76pII7g553q75wrso7iDa3qEHGGtNdLgNzOxuvwZuwV4GesddoveNWD0CyxXaIoMOanTRVmTucwhiXnCqoZSANgD8vo0dfUdBzEE0gwxvIIB3f0DpGUEUb7U7RishTn7PL8U/b+EEeaxZQl1lMQDF9x9ubv6E08O84NTKYAAC4fnzTfEXrOAaZ5ZoZhBBgf7x+qZY/BQ9P7MFca6oaUm2wIQgfPth+hU/QcYYrEE05UcWl5/RPU2/4ic4P57HKJhBBBUWRz1DEDaI4ssSyiNqBwXcwwfL7/qv/AnOUItcoH/5bPnBCw6wpcFJHTGCAvFr8eRXLEIK4lvVlpeII1B4/9nWK17/nTdBTUfroeDbD4dfAsEhHj9lhRZhxAfn+0sgiGumNkfroOLztcsvgSCemdoUrYOCjx6/4vVvuRKU52gd9J3XL4EglnoeLUUIfr+8CY6RJqE//X45Eyy1kEKM6PfLmSBijBFfUN4gliCDttsA6C8IQQZPmuhxKK8QcN9v8p0mCoUlWq3788Gb6KEFh3gEa4irMeLDh3SCuOaihbeI1SB4/5JOEFu5hPpNCejOciJ/goUJ6pIh+PndHoiwk22MFX1hhuZnKn481/TQgjgXnTrIq6Ki/j3HgoUm+rIhAFZGhBbEuvD7mMGnM/DuUNrDC+Jcuq+hd1LD8PmLMRChlw3xfsGeIK7MHBDMlwgviPfz2RjdjzNf4tcb6KX7W7zbZJDKCttQ/PIL0g/3J2wtE0Fj9v3POnT7pKePYt6EgFbcnwGrfzdwhri3kbT3mRiCes3chQezEQj3lnR5mcU+hONuSqitTjzurVw11M9MJpJ+OBYCs1mtPMQsWOhl0ElPx1uro0acIuYwaoL6Je3A2HpYdcRHD0UCJ5fkHfKOZtedlG8GUQH1aoBdsKAskQ1dV+UMI7f9kth1j7oG5buz8a4R3k/xRxmDKeow9F7z0B+FKhKIMgbj5Dc7uACPvtN15tGswEFI5HBWqYs2Kw28JeAu8HwPoeN1qW53sJH0oGsQqkFjkdQBSRVt868QfFmOqehzJHXEFam+D78moHq6H8AehISOgCKt0XjPDzqp3m3d57CJnCAsmLcgpE+Hou8EqIuhM20QO2deagXe7Q5F7G9Q+pvbsnXmldgxZYSbOowwGn+hU3+zHpjDkaAgyl0dUDek32+2jUGD3F0WhcLbtPUv9K1xw3sSh3htZlI6w4i7LHJGN52hsCfdcGgS3bh5Jvo+mXwxTWVI059CUh0qrNBzb5zxDsXk75CuS8THyWfelP1vabJPaggWdF0vqiT/ajGOf2quWCa8YZSeVG8h75KlfHEZWTHlEGWc6BKI03UPNKFB/YTBInjhKeeonQR7Z2m7hvqA8gRvSNtF4kcS7NEXOrRFmQOlMexAlHSq5jI2GuxApPF3DAfakAeaqfyhxpEu1LVBwiPpdqZG7ukwE7eYa3BzjbqEWDOldhAeaHZiuyl18203tdjNiXRV9X7UTkxKpOuXE0E0O9ElFE2/ZAhGaelR/ZTGkslDSYv6lQ+VJZMX5SliJFJZMvlorkKzPvW/qT2izsNGIlhQWlF4kKfzkHBK6T8W/cha8OyU4orCi7wPmp3S+ZPFYOTmLmBbBp2/yQxBGS98ipeRKM7UWrrnH2niknSbsqbrHoqgTtEv0OBorpz91DpDcVHUenWHokTr75SjUGf6WTFge/MlID+tTt+iPH8uuBiUsbUtmtIlfAi0XUXk4HYeUoo83YsiAHA7DylFndfr1H3LToaqXmaMYTAYDAaDwWAwGAwGg8FgMBgMBiMZ/wEcZ7pzBqpo3QAAAABJRU5ErkJggg=="
-                        width="305" height="165" alt="repo_git">
-                    <h3>Aplicações em Python com a interface gráfica flutter através do Flet</h3>
-                    <p>Repositorio para aprender a desenvolver aplicações gráficas com a linguagem Flet baseado no
-                        Flutter.</p>
-                    <a href="https://github.com/OgliariNatan/Flutter-with-Python-and-Flet" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://3.python-requests.org/_static/requests-sidebar.png" width="305" height="200"
-                        alt="repo_git">
-                    <h3>Automações de navegadores para web</h3>
-                    <p>Repositorio para aprender a desenvolver aplicações para raspagem de dados na web. Uma pequena
-                        brincadeira para acessar conteúdos web das unidades curricular da UNOPAR.</p>
-                    <a href="https://github.com/OgliariNatan/-request-cw-unopar" target="_blank" class="Botao">Saiba
-                        +</a>
+    <main>
+        <!-- Sobre Section -->
+        <section id="sobre" class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                            <i class="fas fa-user text-purple-600 mr-3"></i>
+                            Sobre Mim
+                        </h2>
+                        <div class="prose prose-lg text-gray-600">
+                            <p class="mb-6 leading-relaxed">
+                                Engenheiro de software em formação, técnico em eletroeletrônica e
+                                apaixonado por IoT e desenvolvimento de hardware. Atualmente estudo novas linguagens de
+                                programação e exploro projetos inovadores em software e hardware.
+                            </p>
+                            <p class="mb-6 leading-relaxed">
+                                Contribuo com projetos no GitHub e compartilho minha trajetória no LinkedIn e Currículo
+                                Lattes. Estou sempre aberto a colaborações desafiadoras.
+                            </p>
+                        </div>
+
+                        <!-- Skills Tags -->
+                        <div class="flex flex-wrap gap-2 mt-6">
+                            <span
+                                class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">IoT</span>
+                            <span
+                                class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Python</span>
+                            <span
+                                class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Hardware</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Web
+                                Dev</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">Banco de
+                                Dados</span>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 text-center">
+                        <div class="relative inline-block">
+                            <img src="img/Logo.png" alt="Perfil" class="w-80 mx-auto rounded-2xl shadow-2xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="todos">
-                <a href="https://github.com/OgliariNatan?tab=repositories" target="_blank" class="Botao">Conheça outros
-                    &#62;&#62;</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Livros Lidos -->
-    <!-- Repositorio GitHub -->
-    <section id="literarias">
-        <div class="Container">
-            <h2>Obras literarias</h2>
-            <p> Gostaria de listar os livros que li e que, de alguma forma, tocaram minha alma, moldaram minha essência
-                e influenciaram meu crescimento pessoal.</p>
-            <p id="direitos_autorais">* A lista não esta na ordem lida. <br> **Todos os direitos autorais devem ser
-                respeitados.</p>
-
-            <div class="Cards Flex4">
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1oY0UNtSMbeN2310a3sxoVF7yVd7oOiWd" alt="livros">
-                    <h3>RÁPIDO E DEVAGAR, <span>duas formas de pensar</span> </h3>
-                    <p>Autor: Daniel Kahneman. <br>
-                        Publicado em 2011.
+        <!-- Música Section -->
+        <section class="section-padding bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                        <i class="fas fa-music text-purple-600 mr-3"></i>
+                        Músicas para a alma
+                    </h2>
+                    <p class="text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Tenho por convicção que muito do que somos é o que consumimos, dizemos e nossas posturas. Por
+                        isso tenho uma preferência especial por músicas nativistas, pois elas tranquilizam minha alma e
+                        me levam a refletir sobre meu papel no mundo como cidadão, além de me fazer pensar sobre o
+                        futuro que desejo para meus descendentes.
                     </p>
-                    <a href="https://pt.wikipedia.org/wiki/R%C3%A1pido_e_devagar:_Duas_formas_de_pensar" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1AKdd1MckuF1SC1DJViE9wgpwBpE73ont" alt="livros">
-                    <h3>RUÍDO: <span>Uma falha no julgamento humano</span> </h3>
-                    <p>Autor: Daniel Kahneman. <br>
-                        Publicado em 2021.
-                    </p>
-                    <a href="https://www.amazon.com.br/Ru%C3%ADdo-Uma-falha-julgamento-humano/dp/8547001336?asin=B099FMQP8W&revisionId=b8816cde&format=1&depth=1"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1E2e28JozSvPEjzEB-z9MiFaJrKNc1jvF" alt="livros">
-                    <h3>SAPIENS: <span>Uma breve hitória da humanidade.</span> </h3>
-                    <p>Autor: Yuval Noah Harari <br>
-                        Publicado em 2014.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Sapiens:_Uma_Breve_Hist%C3%B3ria_da_Humanidade"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1utDQYX-J5E4BQN602Bf_fMWfqdffL3Ax" alt="livros">
-                    <h3>DOS DELITOS E DAS PENAS</h3>
-                    <p>Autor: Cesare Beccaria <br>
-                        Publicado em 1764.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Cesare_Beccaria#:~:text=Dos%20Delitos%20e%20Das%20Penas%20come%C3%A7ou%20a%20ser%20elaborado%20em,anexou%20seu%20nome%20a%20ele."
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1fCZ5hJ_86h0oeoTuz3YpGc4TPIylai3R" alt="livros">
-                    <h3>PAI RICO, PAI POBRE</h3>
-                    <p>Autor: Robert T. Kiyosaki <br>
-                        Publicado em 1997.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Pai_Rico,_Pai_Pobre" target="_blank" class="Botao">Saiba
-                        +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1haWhmHDg4xlCI8z_RQLUeWjNTvrWkOpn" alt="livros">
-                    <h3>O PRÍNCIPE</h3>
-                    <p>Autor: Nicolau Maquiavel. <br>
-                        Publicado em 1513.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/O_Pr%C3%ADncipe" target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=10A07SPLK5w4vZdGeLSQhoInUrp4bPaTf" alt="livros">
-                    <h3>A SORTE SEGUE A CORAGEM</h3>
-                    <p>Autor: Mario Sergio Cortella. <br>
-                        Publicado em 2018.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/A_sorte_segue_a_coragem.html?id=c01LDwAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1y-zJWph5q4zG7Z-Fzp95oQNMlZWkyTte" alt="livros">
-                    <h3>A revolução dos bichos</h3>
-                    <p>Autor: George Orwell. <br>
-                        Publicado em 1945.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Animal_Farm" target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1s0koY9StH1f29rXVB4PW0-5cteTf-Tcn" alt="livros">
-                    <h3>Não nascemos prontos! <span>Provocações Filosóficas</span> </h3>
-                    <p>Autor: Mario Sergio Cortella. <br>
-                        Publicado em 2006.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/N%C3%A3o_nascemos_prontos.html?id=W28aDAAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1lxqw6_vD_Z-nag_gSUvMp-lxfdlUSMuw" alt="livros">
-                    <h3>O lado difícil das situações difíceis: <span>Como constuir um negócio quando não existem
-                            respostas prontas</span></h3>
-                    <p>Autor: Ben Horowitz. <br>
-                        Publicado em 2021.
-                    </p>
-                    <a href="https://g4educacao.com/blog/livro-o-lado-dificil-das-situacoes-dificeis" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1-K9UTzS7NQJHhRuEeECCnM0DmiXn_V8K" alt="livros">
-                    <h3>Uma Breve História da Riqueza</h3>
-                    <p>Autor: William J. Bernstein. <br>
-                        Publicado em 2015.
-                    </p>
-                    <a href="https://www.lojafundamento.com.br/uma-breve-historia-da-riqueza" target="_blank"
-                        class="Botao">Saiba +</a>
                 </div>
 
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1M6rN9DpEPPpRfLk4mwlWezEZEQeD2iQX" alt="livros">
-                    <h3>UMA BREVE HISTÓRIA DA CIÊNCIA</h3>
-                    <p>Autor: Patricia Fara. <br>
-                        Publicado em 2014.
-                    </p>
-                    <a href="https://www.lojafundamento.com.br/uma-breve-historia-da-ciencia" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1-HfWkyPRxJXxtbd0iLWQYl4FLy7vbG9m" alt="livros">
-                    <h3>Breves respostas para grandes questões</h3>
-                    <p>Autor: Stephen Hawking. <br>
-                        Publicado em 2018.
-                    </p>
-                    <a href="https://www.google.com.br/books/edition/Breves_respostas_para_grandes_quest%C3%B5es/tI9yDwAAQBAJ?hl=pt-BR&gbpv=0"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
+                <div class="flex justify-center">
+                    <div class="w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
 
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1RjoH6Fty05Q2KYwUiMXhcMw_813NCslT" alt="livros">
-                    <h3>Homens Difíceis: <span>Os bastidores do processo criativo de Breaking Bad, Família Soprano, Mad
-                            Men e outras séries revolucionárias</span></h3>
-                    <p>Autor: Brett Martim. <br>
-                        Publicado em 2014.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/Homens_Dif%C3%ADceis.html?id=qMyuCgAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1N6TnR0Kc9G-L7VDVclgJUgn6zbz52Lud" alt="livros">
-                    <h3> A jornada dos nossos genes. <span>Uma história da humanidade e de como as migrações nos
-                            tornaram quem somos</span> </h3>
-                    <p>Autores: Johannes Krause e Thomas Trappe <br>
-                        Publicado em 2022.
-                    </p>
+                        <iframe width="695" height="303" src="https://www.youtube.com/embed/0GsPpxjMSmM"
+                            title="CALIFORNIA DA CANÇÃO NATIVA DO RS | SÓ CLÁSSICOS DO FESTIVAL | 2H" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
 
-                    <a href="https://sextante.com.br/livros/a-jornada-dos-nossos-genes/" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1wj7CqBtC5Uda0EzU08AGKenLS_KyOhec" alt="livros">
-                    <h3>A navalha de Ockham: <span>O princípio filosófico que libertou a ciência e ajudou a explicar o
-                            universo</span> </h3>
-                    <p>Autor: Johnjoe McFadden <br>
-                        Publicado em 2022.
-                    </p>
 
-                    <a href="https://sextante.com.br/livros/a-navalha-de-ockham/" target="_blank" class="Botao">Saiba
-                        +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1FFBR6tLAohR22sp7dnKJKsaLRmMRgIWP" alt="livros">
-                    <h3>Inteligência Artificial - <span>Do Zero ao Metaverso</span></h3>
-                    <p>Autor: Martha Gabriel <br>
-                        Publicado em 2022.
-                    </p>
-                    <a href="https://www.amazon.com.br/Intelig%C3%AAncia-Artificial-Do-Zero-Metaverso/dp/6559773329"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1kNVeRwv7Obp9VDa5TW9Wxq2YtGfX8STa" alt="livros">
-                    <h3>A Teia da Vida: <span>uma Nova Compreensão Científica dos Sistemas Vivos</span></h3>
-                    <p>Autor: Fritjof Capra <br>
-                        Publicado em 1997.
-                    </p>
-                    <a href="https://www.grupopensamento.com.br/produto/a-teia-da-vida-5011" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1wD2zI6ZUydu2fhu-XKpJ6gv1FhiMpyil" alt="livros">
-                    <h3>A ciência de leonardo da vinci. <span>um mergulho profundo na mente do grande gênio de
-                            renascença</span></h3>
-                    <p>Autor: Fritjof Capra <br>
-                        Publicado em 2008.
-                    </p>
-                    <a href="https://www.grupopensamento.com.br/produto/a-ciencia-de-leonardo-da-vinci-5176"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=15P1vCQu34NCZ3I8Zp_fQ30HhAMG_G5T1" alt="livros">
-                    <h3>Fahrenheit 451</h3>
-                    <p>Autor: Ray Bradbury <br>
-                        Publicado em 1953.
-                    </p>
-                    <a href="https://editorasetimoselo.com.br/fahrenheit-451---edicao-especial?search=Fahrenheit%20451"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1MJuVjzv6ivV3CYoCFXURlOgF0WKllpcB" alt="livros">
-                    <h3>1984</h3>
-                    <p>Autor: George Orwell <br>
-                        Publicado em 1949.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/1984_(livro)" target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1t1S5mQThmYbJwxU4IwkvFZsXgE1jVx2e" alt="livros">
-                    <h3>Vigiar e Punir</h3>
-                    <p>Autor: Michel Foucault <br>
-                        Publicado em 1975.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Vigiar_e_Punir" target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1CTS8STPp9mZH5XKgSU9mSdNsFE-ucFJ2" alt="livros">
-                    <h3>Uma breve história do tempo</h3>
-                    <p>Autor: Stephen Hawking <br>
-                        Publicado em 2015.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Uma_Breve_Hist%C3%B3ria_do_Tempo" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1QiQh9MSeg1M_asihFJZ0Ifwn98VoqrQ9" alt="livros">
-                    <h3>O Universo Autoconsciente</h3>
-                    <p>Autor: Amit Goswami<br>
-                        Publicado em 1993.
-                    </p>
-                    <a href="https://editoraaleph.com.br/products/o-universo-autoconsciente?variant=44838485852443"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1l1FaDogDJcZeQh5BfXh9H7VkrSxx_Yb1" alt="livros">
-                    <h3>O Ativista Quântico: <span>Princípios da física quântica para mudar o mundo e a nós
-                            mesmos</span></h3>
-                    <p>Autor: Amit Goswami<br>
-                        Publicado em 2015.
-                    </p>
-                    <a href="https://editoraaleph.com.br/products/o-ativista-quantico?_pos=1&_psq=o+ativista&_ss=e&_v=1.0&variant=44838483001627"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1u_uRcAsotcN7KlMmAtqv7hO5AoTYwdVD" alt="livros">
-                    <h3>Do Contrato Social</h3>
-                    <p>Autor: Jean-Jacques Rousseau<br>
-                        Publicado em 1762.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/Do_Contrato_Social" target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1LyXBt_AYJzyn8MHLTsnIxx_NtgUOb8Y7" alt="livros">
-                    <h3>A Origem das Espécies: <span>A origem das espécies por meio da seleção natural ou a preservação
-                            das raças favorecidas na luta pela vida</span></h3>
-                    <p>Autor: Charles Darwin<br>
-                        Publicado em 1859.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/A_Origem_das_Esp%C3%A9cies" target="_blank"
-                        class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1fY7sXH-TAd-lpzAvKfk2c2KmhMXPQBqZ" alt="livros">
-                    <h3>O Algoritmo Mestre: <span>Como a Busca Pelo Algoritmo de Machine Learning Definitivo Recriará
-                            Nosso Mundo</span></h3>
-                    <p>Autor: Pedro Domingos<br>
-                        Publicado em 2015.
-                    </p>
-                    <a href="https://pt.wikipedia.org/wiki/The_Master_Algorithm" target="_blank" class="Botao">Saiba
-                        +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1wZTbKqYR08RYwFS_lod5ocsPjf-w2swl" alt="livros">
-                    <h3>Introdução à Inteligência Artificial: <span>uma Abordagem Não Técnica</span></h3>
-                    <p>Autor: Tom Taulli<br>
-                        Publicado em 2019.
-                    </p>
-                    <a href="https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Intelig%C3%AAncia-Artificial-Abordagem-T%C3%A9cnica/dp/8575228196/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=35YA2NVUMMI2R&dib=eyJ2IjoiMSJ9.P9IuNdnC6hckyi14zJdApRuVaOuE8vuKngj8Kl96NpEZMgxyKI_WzarMEO36SROFMdUgQfQ18wOEJONmbbasotTNNAJ_aHDpt2OdGVo4kwc6ecKeQiASCurfNONXGpn2MNXqWdIMle6eF7hw9aYY5DpWom_azlWS7SpQ4aeybJ5cFkMGiVDRIbyQ-pJCFlcRyMImOgjdYNc7xWgZ6GF03yjfDfv51Hi1U9344h74KvPUL-rinzIEyjtYsa5jD6_QODx0lhP3M2hEagHuPEib9zK-1IJ9xOc4_e2GykiYzSE.l6xChch0k2WvprEJz1ShW2T2whJ0t2wIqoFndmhVQkM&dib_tag=se&keywords=introdu%C3%A7%C3%A3o+a+inteligencia+artificial&qid=1729771528&sprefix=introdu%C3%A7%C3%A3o+a+inteligencia+artificial%2Caps%2C205&sr=8-1"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1FueYAHpC1F4qd4fV1lKmufAalm55z0ox" alt="livros">
-                    <h3>Inteligência artificial: <span>Como os robôs estão mudando o mundo, a forma como amamos, nos
-                            relacionamos, trabalhamos e vivemos.</span></h3>
-                    <p>Autor: Kai-Fu Lee<br>
-                        Publicado em 2019.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/Intelig%C3%AAncia_artificial.html?id=0zO7DwAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1wwJ5ibZgfwxFBHI8wzqHC3RWKifqdRe4" alt="livros">
-                    <h3>Vida 3.0: <span>O ser humano na era da inteligência artificial</span></h3>
-                    <p>Autor: Max Tegmark<br>
-                        Publicado em 2017.
-                    </p>
-                    <a href="https://www.amazon.com.br/Vida-3-0-humano-intelig%C3%AAncia-artificial/dp/6558100266/ref=sr_1_1?adgrpid=121176528137&dib=eyJ2IjoiMSJ9.tb_jQHWxijfWPueeIFdh8aoicW3O0U8o35WNufQfai5EXNfO94SKiwu56S2hgO8Vp4xib3ySnLbirD6Urr6ojYTe998-yjr8_vpEJj9QKumE1LzGBVgNQNS5PaKW8PB-4eQJlCsrpREk00esMfCBXoN5BoNLSdX6GrRI37oiyZvDeuhEKPPn6I0VbxJ4T4zJq8mXjGuG8J_4PYHr7kBAKTL9uL3vTnGas3YzkZDyW4rBido89Vx41r11C-7J2g4ut8AaHevNNyq2EyNIRaFLUg.sJn6Ebzkm1bTr4f1ou74ehQnH6RQqCFKNzPK0JD6b1g&dib_tag=se&hvadid=526590709327&hvdev=c&hvlocphy=9197317&hvnetw=g&hvqmt=e&hvrand=9419117956906597481&hvtargid=kwd-1348169591719&hydadcr=5651_11235181&keywords=vida+3.0+max+tegmark&qid=1729772498&sr=8-1"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1B7oc_gC8dfvuSh8ManrgDMzFmDpqZCW0" alt="livros">
-                    <h3>Pense de novo: <span>O poder de saber o que você não sabe</span></h3>
-                    <p>Autor: Adam Grant <br>
-                        Publicado em 2021.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/Pense_de_novo.html?id=_3c8EAAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
-                </div>
-                <div class="Card">
-                    <img src="https://drive.google.com/thumbnail?id=1R47N1-TDb_sIZg3lLahZlZyJQ-9G-56d " alt="livros">
-                    <h3>Dar e Receber: <span>Uma abordagem revolucionária sobre sucesso, generosidade e
-                            influência</span></h3>
-                    <p>Autor: Adam Grant <br>
-                        Publicado em 2014.
-                    </p>
-                    <a href="https://books.google.com.br/books/about/Dar_e_receber.html?id=9wQ5AwAAQBAJ&source=kp_book_description&redir_esc=y"
-                        target="_blank" class="Botao">Saiba +</a>
+                        <!-- <iframe
+                            src="https://open.spotify.com/embed/playlist/5S4VpqEpjaz8OE2kQLhA6U?utm_source=generator"
+                            width="100%" height="400" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" class="border-0">
+                        </iframe> -->
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Projetos Section -->
+        <section id="projetos" class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                        <i class="fas fa-code text-green-600 mr-3"></i>
+                        Projetos em Destaque
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Explore meus repositórios no GitHub com projetos de software, hardware e automação.
+                    </p>
+                </div>
 
-    <!-- Rodapé -->
-    <address>
-        <div class="Container Flex6">
-            <div id="contato">
-                <a href="https://api.whatsapp.com/send?phone=5549012345678" target="_blank">
-                    <img src="img/whatsapp.jpg" alt="whatsapp" title="Abrir no whatsapp">
-                    <p>(11) 01234-5678</p>
-                </a>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projeto Card -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="relative">
+                            <img src="img/samba.jpg" alt="Servidor Samba" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span
+                                    class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">Linux</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Servidor Linux Samba</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Repositório para a configuração de um servidor de arquivos com Samba4.
+                            </p>
+                            <a href="https://github.com/OgliariNatan/servidor-file-samba4"
+                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                                Ver no GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="relative">
+                            <img src="https://github.com/OgliariNatan/Fonte_Linear_simetrica_5V/blob/master/Fotos/Arquivo_000.jpeg?raw=true"
+                                alt="Servidor Samba" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span
+                                    class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Hardware</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Fonte linear 5V</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Respositório para a confecção de uma fonte linear simetrica de 5VoltsCC.
+                            </p>
+                            <a href="https://github.com/OgliariNatan/Fonte_Linear_simetrica_5V"
+                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                                Ver no GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="relative">
+                            <img src="https://www.latex-project.org/img/latex-project-logo.svg" alt="Servidor Samba"
+                                class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span
+                                    class="bg-yellow-300 text-white px-3 py-1 rounded-full text-sm font-medium">\Latex</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">Template em LATEX para relatórios de
+                                aulas práticas</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Um template em LATEX para relatórios de aulas práticas no modelo da UNOPAR. este modelo
+                                é compilado no software Atom.
+                            </p>
+                            <a href="https://github.com/ENGENHARIA-DE-SOFTWARE-UNOPAR/Template-UNOPAR"
+                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                                Ver no GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                        <div class="relative">
+                            <img src="https://avatars.githubusercontent.com/u/156432252?s=200&v=4" alt="Servidor Samba"
+                                class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span
+                                    class="bg-green-300 text-white px-3 py-1 rounded-full text-sm font-medium">Organização</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3 text-gray-900">ENGENHARIA DE SOFTWARE - UNOPAR</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Organização para armazenar os trabalhos do curso bacharelado em Engenharia de Software
+                                da instituição UNOPAR.
+                                A quem interessar e quiser contribuir, será muito bem vindo.
+                            </p>
+                            <a href="https://github.com/ENGENHARIA-DE-SOFTWARE-UNOPAR/Template-UNOPAR"
+                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                                Ver no GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Placeholder para mais projetos -->
+                    <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center">
+                        <i class="fas fa-plus text-4xl text-gray-400 mb-4"></i>
+                        <p class="text-gray-500">Mais projetos em breve...</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://github.com/OgliariNatan" target="_blank"
+                        class="inline-flex items-center px-8 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-github mr-2"></i>
+                        Ver todos os projetos
+                    </a>
+                </div>
             </div>
-            <div class="endereco">
-                <a href="https://maps.app.goo.gl/oU6gMauBJi6S8DuQ8" target="_blank">
-                    <img src="img/mapa.png" alt="Mapa" id="iconeMapa">
-                </a>
-                <img src="img/local.png" alt="local" id="iconeLocal">
-                <p>Rua que não existe, 9876</p>
-                <p>Santo</p>
-                <p>Malta</p>
-                <a href="mailto:meueail@gmail.com?subject=ContatoSite">
-                    <img src="img/o-email.png" alt="email" title="Enviar e-mail">
-                    <p>teste@gmail.com</p>
-                </a>
-                <p id="dados">&#128064; endereço e dados de contatos fictícios</p>
+        </section>
+
+        <!-- Formação Section -->
+        <section id="formacao" class="section-padding bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                        <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                        Formação Acadêmica
+                    </h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-university text-purple-600"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Engenharia de Software</h3>
+                                <p class="text-purple-600 font-medium mb-1">UNOPAR (7º semestre)</p>
+                                <p class="text-gray-600">Graduando em Engenharia de Software</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-microchip text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Engenharia Eletrônica</h3>
+                                <p class="text-blue-600 font-medium mb-1">Experiência de seis semestres pelo IFSC -
+                                    câmpus Florianópolis</p>
+                                <p class="text-gray-600">Uma boa passagem pela Engenharia Eletrônica</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-tools text-green-600"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Técnico em Eletroeletrônica</h3>
+                                <p class="text-green-600 font-medium mb-1">Instituto Federal Catarinense - câmpus
+                                    Videira</p>
+                                <p class="text-gray-600">Técnico Integrado em Eletroeletrônica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="googleMaps">
+        </section>
+
+        <!-- Certificações Section -->
+        <section id="certificados" class="section-padding bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                        <i class="fas fa-certificate text-green-600 mr-3"></i>
+                        Certificações
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto mb-6">
+                        Confira as certificações realizadas, para obter habilidades e se habilitar para o mercado de
+                        trabalho.
+                        Algumas das certificações são as disponibilizadas pela UNOPAR como
+                        <a href="https://blog.unopar.com.br/trilhas-de-carreira/#Conheca_as_Trilhas_de_Carreira"
+                            class="text-purple-600 hover:text-purple-700 font-medium">trilha de carreira</a>.
+                    </p>
+                </div>
+
+                <!-- Certificados Grid -->
+                <div id="certificados-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Os certificados serão carregados dinamicamente aqui -->
+                </div>
+
+                <!-- Paginação Certificados -->
+                <div class="flex justify-center items-center mt-12 space-x-2">
+                    <button id="cert-prev"
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div id="cert-pagination" class="flex space-x-1">
+                        <!-- Números de página serão gerados dinamicamente -->
+                    </div>
+                    <button id="cert-next"
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Obras Literárias Section -->
+        <section id="literarias" class="section-padding bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                        <i class="fas fa-book text-blue-600 mr-3"></i>
+                        Obras Literárias
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto mb-6">
+                        Gostaria de listar os livros que li e que, de alguma forma, tocaram minha alma, moldaram minha
+                        essência
+                        e influenciaram meu crescimento pessoal.
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        * A lista não está na ordem lida. ** Todos os direitos autorais devem ser respeitados.
+                    </p>
+                </div>
+
+                <!-- Livros Grid -->
+                <div id="livros-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Os livros serão carregados dinamicamente aqui -->
+                </div>
+
+                <!-- Paginação Livros -->
+                <div class="flex justify-center items-center mt-12 space-x-2">
+                    <button id="books-prev"
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div id="books-pagination" class="flex space-x-1">
+                        <!-- Números de página serão gerados dinamicamente -->
+                    </div>
+                    <button id="books-next"
+                        class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section-padding gradient-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Entre em Contato
+                </h2>
+                <p class="text-white/90 max-w-3xl mx-auto">
+                    Estou sempre aberto a novas oportunidades e colaborações. Vamos conversar!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- WhatsApp -->
+                <div class="text-center glass-effect rounded-2xl p-8">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">WhatsApp</h3>
+                    <a href="https://api.whatsapp.com/send?phone=5549012345678" target="_blank"
+                        class="text-white/90 hover:text-white transition-colors">
+                        (11) 01234-5678
+                    </a>
+                    <p class="text-white/70 text-sm mt-2">👀 Número fictício</p>
+                </div>
+
+                <!-- Email -->
+                <div class="text-center glass-effect rounded-2xl p-8">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Email</h3>
+                    <a href="mailto:meuemail@gmail.com?subject=ContatoSite"
+                        class="text-white/90 hover:text-white transition-colors">
+                        teste@gmail.com
+                    </a>
+                    <p class="text-white/70 text-sm mt-2">👀 Email fictício</p>
+                </div>
+
+                <!-- Localização -->
+                <div class="text-center glass-effect rounded-2xl p-8">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Localização</h3>
+                    <p class="text-white/90">
+                        Rua que não existe, 9876<br>
+                        Santo, Malta
+                    </p>
+                    <p class="text-white/70 text-sm mt-2">👀 Endereço fictício</p>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="mt-12 rounded-2xl overflow-hidden shadow-2xl">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d413504.1921157694!2d14.048711578411739!3d35.9347000616361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130e45281d8647c5%3A0xf582d86136be4239!2sMalta!5e0!3m2!1spt-BR!2sbr!4v1727447705344!5m2!1spt-BR!2sbr"
-                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
-    </address>
-    <footer>
-        <div class="Container Flex5">
-            <div id="copyright">
-                <p>&#169; <a href="https://github.com/OgliariNatan" target="_blank">by OgliariNatan</a></p>
-            </div>
-            <div id="social">
-                <a href="https://www.linkedin.com/" target="_blank"><img src="img/linkedin.png" alt="linkedin"></a>
-                <a href="https://github.com/OgliariNatan" target="_blank"><img src="img/github.png" alt="GitHub"></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-lg">
+                        © <a href="https://github.com/OgliariNatan" target="_blank"
+                            class="hover:text-purple-400 transition-colors">OgliariNatan</a>
+                    </p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/" target="_blank"
+                        class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/OgliariNatan" target="_blank"
+                        class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
-    <a href="#inicio" id="topo"><img src="img/seta-para-cima.png" alt="topo do site"></a>
 
+    <!-- Botão de volta ao topo -->
+    <a href="#inicio" id="back-to-top"
+        class="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Dados dos certificados
+        const certificados = [
+            {
+                titulo: "IOT e Programação de Sensores",
+                descricao: "Apresentar técnicas e embasamento para que alunos de diferentes graduações possam trabalhar com a programação de objetos na internet das coisas.",
+                link: "https://drive.google.com/file/d/1d5MI1Je83O1R-ZshPjR9ALq4nda7EkeS/view"
+            },
+            {
+                titulo: "Análise de Dados com Python",
+                descricao: "Apresentar recursos de análise de dados com python para alunos de diferentes graduações por ser uma habilidade em alta no mercado de trabalho.",
+                link: "https://drive.google.com/file/d/1WLgOo77Q3zU3lo5QijTAqltP6epdqMhX/view"
+            },
+            {
+                titulo: "Processo da Criatividade",
+                descricao: "O processo criativo é o caminho que a sua mente percorre desde a identificação de um problema ou desafio até a geração de soluções inovadoras e a expressão da sua criatividade.",
+                link: "https://drive.google.com/file/d/1KmHL0fYWLndupQIxN4GzeJFdmvVj1rec/view"
+            },
+            {
+                titulo: "Gestão de Projetos",
+                descricao: "Prepare-se para uma das habilidades mais requisitadas nas diferentes áreas do mercado: o gerenciamento de projetos. A Trilha possibilita a compreensão de técnicas de gerenciamento de escopo, tempo, custos, qualidade e pessoas em projetos.",
+                link: "https://drive.google.com/file/d/1eH21zc3ljxnA2AaMgr7JGffvX7LefHNy/view"
+            },
+            {
+                titulo: "Empreendedorismo e Inovação",
+                descricao: "Tire as suas ideias do papel! Esta Trilha é destinada para estudantes e profissionais de todas as áreas que desejam montar o próprio negócio e apresenta os principais fundamentos, processos e tendências relacionadas ao ecossistema da inovação.",
+                link: "https://drive.google.com/file/d/1NP1xhqTYFcjvg5YMa57GEBqEYq9fy83G/view"
+            },
+            {
+                titulo: "Empreender Desafios e Oportunidades",
+                descricao: "Através dos três pilares que compõem essa Trilha, buscamos oferecer conteúdos rápidos e fáceis de serem seguidos, auxiliando as pessoas a repensarem seus negócios diante da crise.",
+                link: "https://drive.google.com/file/d/15dXyNuwubGA3E5FsnYk7sgHbH5kDG2jI/view"
+            },
+            {
+                titulo: "Tecnologia, Direito Digital e Propriedade Intelectual",
+                descricao: "Prepare-se para ser um profissional do futuro. O mercado de trabalho tem passado por uma transformação digital que exige profissionais capazes de compreender os aspectos legais e regulatórios das inovações tecnológicas.",
+                link: "https://drive.google.com/file/d/1hYwzq_9zBrXsNm1WPyQ-6pgb9cAgPOG7/view"
+            },
+            {
+                titulo: "Inovação em Gestão de Pessoas",
+                descricao: "A gestão de pessoas não se limita somente ao RH. Esta Trilha busca preparar profissionais com competências e habilidades em liderança e relações interpessoais para qualquer nível de carreira.",
+                link: "https://drive.google.com/file/d/1Ju2RZ7MbVNRIumbhDU7l-j-fhNQeU5Gi/view"
+            },
+            {
+                titulo: "Inglês: Vocabulário Essencial",
+                descricao: "O domínio de conceitos básicos da língua inglesa é fundamental em um mercado de trabalho cada vez mais globalizado. Esta Trilha apresenta o vocabulário essencial para a construção de textos no tempo presente e passado.",
+                link: "https://drive.google.com/file/d/1MIiTRMBMSNhfUesqfBTDxxnono1ny6u2/view"
+            },
+            {
+                titulo: "Comunicação em Negócios e Mídias Sociais",
+                descricao: "Cada vez mais as instituições, independente do porte, despertam para a importância da prática da comunicação corporativa para a promoção da reputação, visibilidade e credibilidade junto aos clientes.",
+                link: "https://drive.google.com/file/d/1MaA9TUa2WogjlAL5fYfkYvHDQ8k3LWlJ/view"
+            },
+            {
+                titulo: "Curso de Extensão Indústria 4.0",
+                descricao: "O curso apresenta os conceitos de tecnologias avançadas aplicados ao contexto da Gestão de operações. Os quatro smarts da Indústria 4.0: Smart Manufacturing, Smart Products and Services, Smart Working e Smart Supply Chain.",
+                link: "https://drive.google.com/file/d/126zXCclVDifhzyWSjHmKJkwEh9mhk_Vs/view"
+            },
+            {
+                titulo: "Learning with Python",
+                descricao: "This course dives into the basics of computer science in terms of variables, conditionals, loops, and functions using the programming syntax of Python. Learn how to apply this language to solve various problems.",
+                link: "https://drive.google.com/file/d/1PkUNYwx3GLsI_eVSPTMyFiNvy2FmpmvV/view"
+            },
+            {
+                titulo: "Curso de NR10: Segurança em Instalações e Serviços em Eletricidade",
+                descricao: "O objetivo é capacitar os trabalhadores para prevenir acidentes e garantir a segurança e a saúde de todos.",
+                link: "https://drive.google.com/file/d/1cYVtHyKs4K3a77gS_MfIy0n9KQnnt-RL/view?usp=sharing"
+            },
+            {
+                titulo: "Curso de python: Apps para android, ios, linx, win e mac",
+                descricao: "Desenvolvimento de Apps Comerciais com Python e Kivy para Android, iOS, Windows, Linux e MacOS (Básico ao Avançado)",
+                link: "https://drive.google.com/file/d/1DUP--fYGpGgq86nQOSwl9T3oYKBu-rcl/view?usp=sharing"
+            },
+            {
+                titulo: "Internet das coisas (IoT) aplicada para resolução de desafios",
+                descricao: "A utilização da IoT na solução de problemas da administração pública.",
+                link: "https://drive.google.com/file/d/1AtqBoeJintynNz1RNBHls2f2dKLZE4x9/view?usp=drive_link"
+            },
+            {
+                titulo: "Curso de Extensão DEEP LEARNING",
+                descricao: "Técnica de Inteligência Artificial (IA) que permite que computadores aprendam e tomem decisões com base em dados não estruturados e não rotulados",
+                link: "https://drive.google.com/file/d/1FFc7zxTFAxgKRko8Nsb8x4F4tB8hpuyq/view?usp=drive_link"
+            }
+        ];
+
+        // Dados dos livros
+        const livros = [
+            {
+                titulo: "Rápido e Devagar",
+                subtitulo: "duas formas de pensar",
+                autor: "Daniel Kahneman",
+                ano: "2011",
+                imagem: "https://drive.google.com/thumbnail?id=1oY0UNtSMbeN2310a3sxoVF7yVd7oOiWd",
+                link: "https://pt.wikipedia.org/wiki/R%C3%A1pido_e_devagar:_Duas_formas_de_pensar"
+            },
+            {
+                titulo: "Ruído",
+                subtitulo: "Uma falha no julgamento humano",
+                autor: "Daniel Kahneman",
+                ano: "2021",
+                imagem: "https://drive.google.com/thumbnail?id=1AKdd1MckuF1SC1DJViE9wgpwBpE73ont",
+                link: "https://www.amazon.com.br/Ru%C3%ADdo-Uma-falha-julgamento-humano/dp/8547001336"
+            },
+            {
+                titulo: "Sapiens",
+                subtitulo: "Uma breve história da humanidade",
+                autor: "Yuval Noah Harari",
+                ano: "2014",
+                imagem: "https://drive.google.com/thumbnail?id=1E2e28JozSvPEjzEB-z9MiFaJrKNc1jvF",
+                link: "https://pt.wikipedia.org/wiki/Sapiens:_Uma_Breve_Hist%C3%B3ria_da_Humanidade"
+            },
+            {
+                titulo: "Dos Delitos e Das Penas",
+                subtitulo: "",
+                autor: "Cesare Beccaria",
+                ano: "1764",
+                imagem: "https://drive.google.com/thumbnail?id=1utDQYX-J5E4BQN602Bf_fMWfqdffL3Ax",
+                link: "https://pt.wikipedia.org/wiki/Cesare_Beccaria"
+            },
+            {
+                titulo: "Pai Rico, Pai Pobre",
+                subtitulo: "",
+                autor: "Robert T. Kiyosaki",
+                ano: "1997",
+                imagem: "https://drive.google.com/thumbnail?id=1fCZ5hJ_86h0oeoTuz3YpGc4TPIylai3R",
+                link: "https://pt.wikipedia.org/wiki/Pai_Rico,_Pai_Pobre"
+            },
+            {
+                titulo: "O Príncipe",
+                subtitulo: "",
+                autor: "Nicolau Maquiavel",
+                ano: "1513",
+                imagem: "https://drive.google.com/thumbnail?id=1haWhmHDg4xlCI8z_RQLUeWjNTvrWkOpn",
+                link: "https://pt.wikipedia.org/wiki/O_Pr%C3%ADncipe"
+            },
+            {
+                titulo: "A Sorte Segue a Coragem",
+                subtitulo: "",
+                autor: "Mario Sergio Cortella",
+                ano: "2018",
+                imagem: "https://drive.google.com/thumbnail?id=10A07SPLK5w4vZdGeLSQhoInUrp4bPaTf",
+                link: "https://books.google.com.br/books/about/A_sorte_segue_a_coragem.html"
+            },
+            {
+                titulo: "O lado difícil das situações difíceis",
+                subtitulo: "Como constuir um negócio quando não existem respostas prontas",
+                autor: "Ben Horowitz",
+                ano: "2021",
+                imagem: "https://drive.google.com/thumbnail?id=1lxqw6_vD_Z-nag_gSUvMp-lxfdlUSMuw",
+                link: "https://g4educacao.com/blog/livro-o-lado-dificil-das-situacoes-dificeis"
+            },
+            {
+                titulo: "A Revolução dos Bichos",
+                subtitulo: "",
+                autor: "George Orwell",
+                ano: "1945",
+                imagem: "https://drive.google.com/thumbnail?id=1y-zJWph5q4zG7Z-Fzp95oQNMlZWkyTte",
+                link: "https://pt.wikipedia.org/wiki/Animal_Farm"
+            },
+            {
+                titulo: "Não Nascemos Prontos!",
+                subtitulo: "Provocações Filosóficas",
+                autor: "Mario Sergio Cortella",
+                ano: "2006",
+                imagem: "https://drive.google.com/thumbnail?id=1s0koY9StH1f29rXVB4PW0-5cteTf-Tcn",
+                link: "https://books.google.com.br/books/about/N%C3%A3o_nascemos_prontos.html"
+            },
+            {
+                titulo: "1984",
+                subtitulo: "",
+                autor: "George Orwell",
+                ano: "1949",
+                imagem: "https://drive.google.com/thumbnail?id=1MJuVjzv6ivV3CYoCFXURlOgF0WKllpcB",
+                link: "https://pt.wikipedia.org/wiki/1984_(livro)"
+            },
+            {
+                titulo: "Fahrenheit 451",
+                subtitulo: "",
+                autor: "Ray Bradbury",
+                ano: "1953",
+                imagem: "https://drive.google.com/thumbnail?id=15P1vCQu34NCZ3I8Zp_fQ30HhAMG_G5T1",
+                link: "https://editorasetimoselo.com.br/fahrenheit-451---edicao-especial"
+            },
+            {
+                titulo: "Uma Breve História do Tempo",
+                subtitulo: "",
+                autor: "Stephen Hawking",
+                ano: "2015",
+                imagem: "https://drive.google.com/thumbnail?id=1CTS8STPp9mZH5XKgSU9mSdNsFE-ucFJ2",
+                link: "https://pt.wikipedia.org/wiki/Uma_Breve_Hist%C3%B3ria_do_Tempo"
+            },
+            {
+                titulo: "Uma Breve História da Riqueza",
+                subtitulo: "",
+                autor: "William J. Bernstein",
+                ano: "2015",
+                imagem: "https://drive.google.com/thumbnail?id=1-K9UTzS7NQJHhRuEeECCnM0DmiXn_V8K",
+                link: "https://www.lojafundamento.com.br/produtos/uma-breve-historia-da-riqueza/"
+            },
+            {
+                titulo: "UMA BREVE HISTÓRIA DA CIÊNCIA",
+                subtitulo: "",
+                autor: "Patricia Fara",
+                ano: "2014",
+                imagem: "https://drive.google.com/thumbnail?id=1M6rN9DpEPPpRfLk4mwlWezEZEQeD2iQX",
+                link: "https://www.lojafundamento.com.br/uma-breve-historia-da-ciencia"
+            },
+            {
+                titulo: "Breves respostas para grandes questões",
+                subtitulo: "",
+                autor: "Stephen Hawking",
+                ano: "2018",
+                imagem: "https://drive.google.com/thumbnail?id=1-HfWkyPRxJXxtbd0iLWQYl4FLy7vbG9m",
+                link: "https://www.google.com.br/books/edition/Breves_respostas_para_grandes_quest%C3%B5es/tI9yDwAAQBAJ?hl=pt-BR&gbpv=0"
+            },
+            {
+                titulo: "Homens Difíceis",
+                subtitulo: "Os bastidores do processo criativo de Breaking Bad, Família Soprano, Mad Men e outras séries revolucionárias",
+                autor: "Brett Martim",
+                ano: "2014",
+                imagem: "https://drive.google.com/thumbnail?id=1RjoH6Fty05Q2KYwUiMXhcMw_813NCslT",
+                link: "https://books.google.com.br/books/about/Homens_Dif%C3%ADceis.html?id=qMyuCgAAQBAJ&source=kp_book_description&redir_esc=y"
+            },
+            {
+                titulo: "A jornada dos nossos genes",
+                subtitulo: "Uma história da humanidade e de como as migrações nos tornaram quem somos",
+                autor: "Johannes Krause e Thomas Trappe",
+                ano: "2022",
+                imagem: "https://drive.google.com/thumbnail?id=1N6TnR0Kc9G-L7VDVclgJUgn6zbz52Lud",
+                link: "https://sextante.com.br/livros/a-jornada-dos-nossos-genes/"
+            },
+            {
+                titulo: "A navalha de Ockham",
+                subtitulo: "O princípio filosófico que libertou a ciência e ajudou a explicar o universo",
+                autor: " Johnjoe McFadden",
+                ano: "2022",
+                imagem: "https://drive.google.com/thumbnail?id=1wj7CqBtC5Uda0EzU08AGKenLS_KyOhec",
+                link: "https://sextante.com.br/livros/a-navalha-de-ockham/"
+            },
+            {
+                titulo: "Inteligência Artificial",
+                subtitulo: "Do Zero ao Metaverso",
+                autor: "Martha Gabriel",
+                ano: "2022",
+                imagem: "https://drive.google.com/thumbnail?id=1FFBR6tLAohR22sp7dnKJKsaLRmMRgIWP",
+                link: "https://www.amazon.com.br/Intelig%C3%AAncia-Artificial-Do-Zero-Metaverso/dp/6559773329"
+            },
+            {
+                titulo: "A Teia da Vida",
+                subtitulo: "uma Nova Compreensão Científica dos Sistemas Vivos",
+                autor: "Fritjof Capra",
+                ano: "1997",
+                imagem: "https://drive.google.com/thumbnail?id=1kNVeRwv7Obp9VDa5TW9Wxq2YtGfX8STa",
+                link: "https://www.grupopensamento.com.br/produto/a-teia-da-vida-5011"
+            },
+            {
+                titulo: "A ciência de leonardo da vinci",
+                subtitulo: "um mergulho profundo na mente do grande gênio de renascença",
+                autor: "Fritjof Capra",
+                ano: "2008",
+                imagem: "https://drive.google.com/thumbnail?id=1wD2zI6ZUydu2fhu-XKpJ6gv1FhiMpyil",
+                link: "https://www.grupopensamento.com.br/produto/a-ciencia-de-leonardo-da-vinci-5176"
+            },
+            {
+                titulo: "Vigiar e Punir",
+                subtitulo: "",
+                autor: "Michel Foucault",
+                ano: "1975",
+                imagem: "https://drive.google.com/thumbnail?id=1t1S5mQThmYbJwxU4IwkvFZsXgE1jVx2e",
+                link: "https://pt.wikipedia.org/wiki/Vigiar_e_Punir"
+            },
+            {
+                titulo: "O Universo Autoconsciente",
+                subtitulo: "",
+                autor: "Amit Goswami",
+                ano: "1993",
+                imagem: "https://drive.google.com/thumbnail?id=1QiQh9MSeg1M_asihFJZ0Ifwn98VoqrQ9",
+                link: "https://editoraaleph.com.br/products/o-universo-autoconsciente?variant=44838485852443"
+            },
+            {
+                titulo: "O Ativista Quântico",
+                subtitulo: "Princípios da física quântica para mudar o mundo e a nós mesmos",
+                autor: "Amit Goswami",
+                ano: "2015",
+                imagem: "https://drive.google.com/thumbnail?id=1l1FaDogDJcZeQh5BfXh9H7VkrSxx_Yb1",
+                link: "https://editoraaleph.com.br/products/o-ativista-quantico?_pos=1&_psq=o+ativista&_ss=e&_v=1.0&variant=44838483001627"
+            },
+            {
+                titulo: "Do Contrato Social",
+                subtitulo: "",
+                autor: "Jean-Jacques Rousseau",
+                ano: "1762",
+                imagem: "https://drive.google.com/thumbnail?id=1u_uRcAsotcN7KlMmAtqv7hO5AoTYwdVD",
+                link: "https://pt.wikipedia.org/wiki/Do_Contrato_Social"
+            },
+            {
+                titulo: "A Origem das Espécies",
+                subtitulo: "A origem das espécies por meio da seleção natural ou a preservação das raças favorecidas na luta pela vida",
+                autor: "Charles Darwin",
+                ano: "1859",
+                imagem: "https://drive.google.com/thumbnail?id=1LyXBt_AYJzyn8MHLTsnIxx_NtgUOb8Y7",
+                link: "https://pt.wikipedia.org/wiki/A_Origem_das_Esp%C3%A9cies"
+            },
+            {
+                titulo: "O Algoritmo Mestre",
+                subtitulo: "Como a Busca Pelo Algoritmo de Machine Learning Definitivo Recriará Nosso Mundo",
+                autor: "Pedro Domingos",
+                ano: "2015",
+                imagem: "https://drive.google.com/thumbnail?id=1fY7sXH-TAd-lpzAvKfk2c2KmhMXPQBqZ",
+                link: "https://pt.wikipedia.org/wiki/The_Master_Algorithm"
+            },
+            {
+                titulo: "Introdução à Inteligência Artificial",
+                subtitulo: "uma Abordagem Não Técnica",
+                autor: "Tom Taulli",
+                ano: "2019",
+                imagem: "https://drive.google.com/thumbnail?id=1wZTbKqYR08RYwFS_lod5ocsPjf-w2swl",
+                link: "https://www.amazon.com.br/Introdu%C3%A7%C3%A3o-Intelig%C3%AAncia-Artificial-Abordagem-T%C3%A9cnica/dp/8575228196/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=35YA2NVUMMI2R&dib=eyJ2IjoiMSJ9.P9IuNdnC6hckyi14zJdApRuVaOuE8vuKngj8Kl96NpEZMgxyKI_WzarMEO36SROFMdUgQfQ18wOEJONmbbasotTNNAJ_aHDpt2OdGVo4kwc6ecKeQiASCurfNONXGpn2MNXqWdIMle6eF7hw9aYY5DpWom_azlWS7SpQ4aeybJ5cFkMGiVDRIbyQ-pJCFlcRyMImOgjdYNc7xWgZ6GF03yjfDfv51Hi1U9344h74KvPUL-rinzIEyjtYsa5jD6_QODx0lhP3M2hEagHuPEib9zK-1IJ9xOc4_e2GykiYzSE.l6xChch0k2WvprEJz1ShW2T2whJ0t2wIqoFndmhVQkM&dib_tag=se&keywords=introdu%C3%A7%C3%A3o+a+inteligencia+artificial&qid=1729771528&sprefix=introdu%C3%A7%C3%A3o+a+inteligencia+artificial%2Caps%2C205&sr=8-1"
+            },
+            {
+                titulo: "Inteligência artificial",
+                subtitulo: "Como os robôs estão mudando o mundo, a forma como amamos, nos relacionamos, trabalhamos e vivemos",
+                autor: "Kai-Fu Lee",
+                ano: "2019",
+                imagem: "https://drive.google.com/thumbnail?id=1FueYAHpC1F4qd4fV1lKmufAalm55z0ox",
+                link: "https://books.google.com.br/books/about/Intelig%C3%AAncia_artificial.html?id=0zO7DwAAQBAJ&source=kp_book_description&redir_esc=y"
+            },
+            {
+                titulo: "Vida 3.0",
+                subtitulo: "O ser humano na era da inteligência artificial",
+                autor: "Max Tegmark",
+                ano: "2017",
+                imagem: "https://drive.google.com/thumbnail?id=1wwJ5ibZgfwxFBHI8wzqHC3RWKifqdRe4",
+                link: "https://www.amazon.com.br/Vida-3-0-humano-intelig%C3%AAncia-artificial/dp/6558100266/ref=sr_1_1?adgrpid=121176528137&dib=eyJ2IjoiMSJ9.tb_jQHWxijfWPueeIFdh8aoicW3O0U8o35WNufQfai5EXNfO94SKiwu56S2hgO8Vp4xib3ySnLbirD6Urr6ojYTe998-yjr8_vpEJj9QKumE1LzGBVgNQNS5PaKW8PB-4eQJlCsrpREk00esMfCBXoN5BoNLSdX6GrRI37oiyZvDeuhEKPPn6I0VbxJ4T4zJq8mXjGuG8J_4PYHr7kBAKTL9uL3vTnGas3YzkZDyW4rBido89Vx41r11C-7J2g4ut8AaHevNNyq2EyNIRaFLUg.sJn6Ebzkm1bTr4f1ou74ehQnH6RQqCFKNzPK0JD6b1g&dib_tag=se&hvadid=526590709327&hvdev=c&hvlocphy=9197317&hvnetw=g&hvqmt=e&hvrand=9419117956906597481&hvtargid=kwd-1348169591719&hydadcr=5651_11235181&keywords=vida+3.0+max+tegmark&qid=1729772498&sr=8-1"
+            },
+            {
+                titulo: "Pense de novo",
+                subtitulo: "O poder de saber o que você não sabe",
+                autor: "Adam Grant",
+                ano: "2021",
+                imagem: "https://drive.google.com/thumbnail?id=1B7oc_gC8dfvuSh8ManrgDMzFmDpqZCW0",
+                link: "https://books.google.com.br/books/about/Pense_de_novo.html?id=_3c8EAAAQBAJ&source=kp_book_description&redir_esc=y"
+            },
+            {
+                titulo: "Dar e Receber",
+                subtitulo: "Uma abordagem revolucionária sobre sucesso, generosidade e influência",
+                autor: "Adam Grant",
+                ano: "2014",
+                imagem: "https://drive.google.com/thumbnail?id=1R47N1-TDb_sIZg3lLahZlZyJQ-9G-56d",
+                link: "https://books.google.com.br/books/about/Dar_e_receber.html?id=9wQ5AwAAQBAJ&source=kp_book_description&redir_esc=y"
+            },
+            {
+                titulo: "Originais",
+                subtitulo: "Como os inconformistas mudam o mundo",
+                autor: "Adam Grant",
+                ano: "2016",
+                imagem: "https://m.media-amazon.com/images/I/61Xotv9SmJL._SY342_.jpg",
+                link: "https://books.google.com.br/books/about/Originais.html?id=eLRhDgAAQBAJ&source=kp_book_description&redir_esc=y"
+            },
+
+        ];
+
+        // Configurações de paginação
+        const ITEMS_PER_PAGE = 6;
+        let currentCertPage = 1;
+        let currentBookPage = 1;
+
+        // Função para criar card de certificado
+        function createCertCard(cert) {
+            return `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100 p-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-green-600"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">${cert.titulo}</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">${cert.descricao}</p>
+                            <a href="${cert.link}" target="_blank" 
+                               class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors text-sm">
+                                Ver Certificado <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Função para criar card de livro
+        function createBookCard(book) {
+            const subtitulo = book.subtitulo ? `<span class="text-gray-600">${book.subtitulo}</span>` : '';
+            return `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-gray-100">
+                    <div class="relative">
+                        <img src="${book.imagem}" alt="${book.titulo}" class="w-full h-64 object-contain">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-900">
+                            ${book.titulo}
+                            ${subtitulo}
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            <strong>Autor:</strong> ${book.autor}<br>
+                            <strong>Publicado em:</strong> ${book.ano}
+                        </p>
+                        <a href="${book.link}" target="_blank"
+                           class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors">
+                            Saiba mais <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Função para criar botões de paginação
+        function createPaginationButtons(currentPage, totalPages, type) {
+            const buttons = [];
+            const maxVisible = 5;
+
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+            if (endPage - startPage + 1 < maxVisible) {
+                startPage = Math.max(1, endPage - maxVisible + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const isActive = i === currentPage;
+                buttons.push(`
+                    <button onclick="goToPage(${i}, '${type}')" 
+                            class="px-3 py-2 rounded-lg transition-colors ${isActive
+                        ? 'bg-purple-600 text-white'
+                        : 'bg-white border border-gray-300 hover:bg-gray-50 text-gray-700'}">
+                        ${i}
+                    </button>
+                `);
+            }
+
+            return buttons.join('');
+        }
+
+        // Função para ir para uma página específica
+        function goToPage(page, type) {
+            if (type === 'cert') {
+                currentCertPage = page;
+                renderCertificados();
+            } else if (type === 'book') {
+                currentBookPage = page;
+                renderLivros();
+            }
+        }
+
+        // Função para renderizar certificados
+        function renderCertificados() {
+            const container = document.getElementById('certificados-container');
+            const startIndex = (currentCertPage - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+            const currentCerts = certificados.slice(startIndex, endIndex);
+
+            container.innerHTML = currentCerts.map(createCertCard).join('');
+
+            // Atualizar paginação
+            const totalPages = Math.ceil(certificados.length / ITEMS_PER_PAGE);
+            const paginationContainer = document.getElementById('cert-pagination');
+            paginationContainer.innerHTML = createPaginationButtons(currentCertPage, totalPages, 'cert');
+
+            // Atualizar botões prev/next
+            document.getElementById('cert-prev').disabled = currentCertPage === 1;
+            document.getElementById('cert-next').disabled = currentCertPage === totalPages;
+        }
+
+        // Função para renderizar livros
+        function renderLivros() {
+            const container = document.getElementById('livros-container');
+            const startIndex = (currentBookPage - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+            const currentBooks = livros.slice(startIndex, endIndex);
+
+            container.innerHTML = currentBooks.map(createBookCard).join('');
+
+            // Atualizar paginação
+            const totalPages = Math.ceil(livros.length / ITEMS_PER_PAGE);
+            const paginationContainer = document.getElementById('books-pagination');
+            paginationContainer.innerHTML = createPaginationButtons(currentBookPage, totalPages, 'book');
+
+            // Atualizar botões prev/next
+            document.getElementById('books-prev').disabled = currentBookPage === 1;
+            document.getElementById('books-next').disabled = currentBookPage === totalPages;
+        }
+
+        // Event listeners para botões prev/next
+        document.addEventListener('DOMContentLoaded', function () {
+            // Certificados
+            document.getElementById('cert-prev').addEventListener('click', function () {
+                if (currentCertPage > 1) {
+                    goToPage(currentCertPage - 1, 'cert');
+                }
+            });
+
+            document.getElementById('cert-next').addEventListener('click', function () {
+                const totalPages = Math.ceil(certificados.length / ITEMS_PER_PAGE);
+                if (currentCertPage < totalPages) {
+                    goToPage(currentCertPage + 1, 'cert');
+                }
+            });
+
+            // Livros
+            document.getElementById('books-prev').addEventListener('click', function () {
+                if (currentBookPage > 1) {
+                    goToPage(currentBookPage - 1, 'book');
+                }
+            });
+
+            document.getElementById('books-next').addEventListener('click', function () {
+                const totalPages = Math.ceil(livros.length / ITEMS_PER_PAGE);
+                if (currentBookPage < totalPages) {
+                    goToPage(currentBookPage + 1, 'book');
+                }
+            });
+
+            // Renderizar dados iniciais
+            renderCertificados();
+            renderLivros();
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    </script>
+
+    <!-- Script: Buy me a coffee -->
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
         data-id="natanogliag" data-description="Support me on Buy me a coffee!" data-message="Pague-me um café?"
-        data-color="#BD5FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script> <!-- opção do  -->
-
+        data-color="#BD5FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
 </body>
 
 </html>
