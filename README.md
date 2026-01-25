@@ -18,3 +18,4 @@
 ```html
 https://drive.google.com/thumbnail?id=
 ```
+ <!-- <script src="https://gist.github.com/OgliariNatan/57bb616cd3a0ad878d8b0a016518429a.js"></script> -->
