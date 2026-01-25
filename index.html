@@ -691,7 +691,7 @@
                             </div>
                             <div class="p-6 overflow-x-auto">
                                 <p class="text-sm text-gray-600 mb-4 leading-relaxed">
-                                    A escala TRL (Technology Readiness Levels) é utilizada para avaliação de uma tecnologia de acordo com seu grau de desenvolvimento. Permite o acompanhamento de ativos tecnológicos durante os processos de pesquisa, desenvolvimento e validação, indicando o quão pronto se encontra um produto em sua escala de desenvolvimento.
+                                    A escala TRL (Technology Readiness Levels) aplicada a tecnologias digitais, descreve a prontidão de software desde a ideação até a pós-comercialização, orientando pesquisa, desenvolvimento, validação e lançamento.
                                 </p>
                                 <table class="w-full text-sm">
                                     <thead>    
@@ -705,47 +705,95 @@
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 1</td>
                                             <td class="py-3 text-gray-600 font-medium text-xs">Ideação</td>
-                                            <td class="py-3 text-gray-600 text-xs">Princípios básicos observados e reportados</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Necessidade identificada e objetivos iniciais.</li>
+                                                    <li>Estudos de uso básico, arquitetura de software, formulações matemáticas e algoritmos gerais.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 2</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Concepção</td>
-                                            <td class="py-3 text-gray-600 text-xs">Concepção tecnológica e/ou aplicação formulada</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Prova de Princípio</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Ideias de pesquisa desenvolvidas; conceito de tecnologia/aplicação formulado.</li>
+                                                    <li>Estudos analíticos iniciais e início da codificação, comparação de tecnologias concorrentes.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 3</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Prova de Conceito</td>
-                                            <td class="py-3 text-gray-600 text-xs">Prova de conceitos das funções críticas de forma analítica ou experimental</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Prova de Conceito Demonstrada</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Script de conceito / pré‑alpha pronto.</li>
+                                                    <li>Rascunho funcional inicial criado.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 4</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Otimização</td>
-                                            <td class="py-3 text-gray-600 text-xs">Validação em ambiente de laboratório de componentes ou arranjos experimentais básicos</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Prova de Conceito Estabelecida</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Ambiente de funcionalidade limitada para validar propriedades críticas.</li>
+                                                    <li>Componentes de software não integrados usando dados parcialmente representativos.</li>
+                                                    <li>Resultados laboratoriais validando propriedades críticas.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 5</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Prototipagem</td>
-                                            <td class="py-3 text-gray-600 text-xs">Validação em ambiente relevante de componentes ou arranjos experimentais com configurações físicas finais</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Validação em Estágio Inicial (Alpha)</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Integração com aspectos do sistema existente e conformidade com ambiente/interfaces de destino.</li>
+                                                    <li>Experimentos com problemas realistas.</li>
+                                                    <li>Testes alpha rigorosos.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 6</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Escalonamento</td>
-                                            <td class="py-3 text-gray-600 text-xs">Modelo do sistema/subsistema protótipo de demonstrador em ambiente relevante</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Validação End‑to‑End (Beta)</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Viabilidade demonstrada em problemas realistas em grande escala.</li>
+                                                    <li>Validação de ponta a ponta em ambiente relevante.</li>
+                                                    <li>Testes beta rigorosos.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 7</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Demonstração em Ambiente Operacional</td>
-                                            <td class="py-3 text-gray-600 text-xs">Protótipo do demonstrador do sistema em ambiente operacional</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Validação em Estágio Avançado</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Testes rigorosos e validação por terceiros.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="border-b border-gray-100 hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 8</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Produção</td>
-                                            <td class="py-3 text-gray-600 text-xs">Sistema completo, testado, qualificado e demonstrado</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Pré‑comercialização</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Qualidade de software conforme ISO/IEC 9126 e normas internacionais.</li>
+                                                    <li>Privacidade e proteção de dados de acordo com padrões (ex.: HIPAA quando aplicável).</li>
+                                                    <li>Lançamento do software.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                         <tr class="hover:bg-gray-50">
                                             <td class="py-3 font-medium text-blue-600">TRL 9</td>
-                                            <td class="py-3 text-gray-600 font-medium text-xs">Produção Continuada</td>
-                                            <td class="py-3 text-gray-600 text-xs">Sistema já foi operado em todas as condições, extensão e alcance</td>
+                                            <td class="py-3 text-gray-600 font-medium text-xs">Comercialização e Pós‑comercialização</td>
+                                            <td class="py-3 text-gray-600 text-xs">
+                                                <ul class="list-disc pl-4">
+                                                    <li>Melhoria contínua (novas versões) conforme demanda e feedback dos usuários.</li>
+                                                    <li>Incorporação contínua de novas funcionalidades conforme demanda e feedback.</li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -810,7 +858,7 @@
                             <div class="bg-gradient-to-r from-indigo-600 to-indigo-700 p-6">
                                 <h3 class="text-xl font-semibold text-white flex items-center">
                                     <i class="fas fa-layer-group mr-3"></i>
-                                    Padrões de Código (Clean Code)
+                                    Padrões de Código
                                 </h3>
                             </div>
                             <div class="p-6 overflow-x-auto">
