@@ -1011,6 +1011,19 @@
                     </p>
                 </div>
 
+                <!-- Campo de Busca -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="relative">
+                        <input type="text" id="cert-search" placeholder="Buscar por título..."
+                            class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-full focus:outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200 transition-all">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <button id="cert-clear-search" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <p id="cert-search-result" class="text-sm text-gray-500 mt-2 text-center"></p>
+                </div>
+
                 <!-- Certificados Grid -->
                 <div id="certificados-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Os certificados serão carregados dinamicamente aqui -->
@@ -1049,6 +1062,19 @@
                     <p class="text-sm text-gray-500">
                         * A lista não está na ordem lida. <br> ** Todos os direitos autorais devem ser respeitados.
                     </p>
+                </div>
+
+                <!-- Campo de Busca -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="relative">
+                        <input type="text" id="book-search" placeholder="Buscar por título ou autor..."
+                            class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-full focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-200 transition-all">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <button id="book-clear-search" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 hidden">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <p id="book-search-result" class="text-sm text-gray-500 mt-2 text-center"></p>
                 </div>
 
                 <!-- Livros Grid -->
@@ -1566,6 +1592,29 @@
         const ITEMS_PER_PAGE = 6;
         let currentCertPage = 1;
         let currentBookPage = 1;
+        let certSearchQuery = '';
+        let bookSearchQuery = '';
+
+        // Função para filtrar certificados por busca
+        function filterCertificadosBySearch(query) {
+            if (!query.trim()) {
+                return certificados;
+            }
+            return certificados.filter(cert => 
+                cert.titulo.toLowerCase().includes(query.toLowerCase())
+            );
+        }
+
+        // Função para filtrar livros por busca
+        function filterLivrosBySearch(query) {
+            if (!query.trim()) {
+                return livros;
+            }
+            return livros.filter(book => 
+                book.titulo.toLowerCase().includes(query.toLowerCase()) ||
+                book.autor.toLowerCase().includes(query.toLowerCase())
+            );
+        }
 
         // Função para criar card de certificado
         function createCertCard(cert) {
@@ -1581,7 +1630,7 @@
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">${cert.titulo}</h3>
                             <p class="text-gray-600 text-sm mb-4 leading-relaxed">${cert.descricao}</p>
                             <a href="${cert.link}" target="_blank" 
-                               class="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium transition-colors text-sm">
+                               class="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors text-sm">
                                 Ver Certificado <i class="fas fa-external-link-alt ml-2"></i>
                             </a>
                         </div>
@@ -1658,14 +1707,28 @@
         // Função para renderizar certificados
         function renderCertificados() {
             const container = document.getElementById('certificados-container');
+            const filteredCerts = filterCertificadosBySearch(certSearchQuery);
             const startIndex = (currentCertPage - 1) * ITEMS_PER_PAGE;
             const endIndex = startIndex + ITEMS_PER_PAGE;
-            const currentCerts = certificados.slice(startIndex, endIndex);
+            const currentCerts = filteredCerts.slice(startIndex, endIndex);
 
-            container.innerHTML = currentCerts.map(createCertCard).join('');
+            // Atualizar mensagem de resultado
+            const resultText = document.getElementById('cert-search-result');
+            if (certSearchQuery.trim()) {
+                resultText.textContent = `${filteredCerts.length} resultado${filteredCerts.length !== 1 ? 's' : ''} encontrado${filteredCerts.length !== 1 ? 's' : ''}`;
+            } else {
+                resultText.textContent = '';
+            }
+
+            // Se não houver resultados
+            if (currentCerts.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">Nenhum certificado encontrado para sua busca.</p></div>';
+            } else {
+                container.innerHTML = currentCerts.map(createCertCard).join('');
+            }
 
             // Atualizar paginação
-            const totalPages = Math.ceil(certificados.length / ITEMS_PER_PAGE);
+            const totalPages = Math.ceil(filteredCerts.length / ITEMS_PER_PAGE);
             const paginationContainer = document.getElementById('cert-pagination');
             paginationContainer.innerHTML = createPaginationButtons(currentCertPage, totalPages, 'cert');
 
@@ -1677,14 +1740,28 @@
         // Função para renderizar livros
         function renderLivros() {
             const container = document.getElementById('livros-container');
+            const filteredBooks = filterLivrosBySearch(bookSearchQuery);
             const startIndex = (currentBookPage - 1) * ITEMS_PER_PAGE;
             const endIndex = startIndex + ITEMS_PER_PAGE;
-            const currentBooks = livros.slice(startIndex, endIndex);
+            const currentBooks = filteredBooks.slice(startIndex, endIndex);
 
-            container.innerHTML = currentBooks.map(createBookCard).join('');
+            // Atualizar mensagem de resultado
+            const resultText = document.getElementById('book-search-result');
+            if (bookSearchQuery.trim()) {
+                resultText.textContent = `${filteredBooks.length} resultado${filteredBooks.length !== 1 ? 's' : ''} encontrado${filteredBooks.length !== 1 ? 's' : ''}`;
+            } else {
+                resultText.textContent = '';
+            }
+
+            // Se não houver resultados
+            if (currentBooks.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center py-12"><p class="text-gray-500 text-lg">Nenhum livro encontrado para sua busca.</p></div>';
+            } else {
+                container.innerHTML = currentBooks.map(createBookCard).join('');
+            }
 
             // Atualizar paginação
-            const totalPages = Math.ceil(livros.length / ITEMS_PER_PAGE);
+            const totalPages = Math.ceil(filteredBooks.length / ITEMS_PER_PAGE);
             const paginationContainer = document.getElementById('books-pagination');
             paginationContainer.innerHTML = createPaginationButtons(currentBookPage, totalPages, 'book');
 
@@ -1703,10 +1780,30 @@
             });
 
             document.getElementById('cert-next').addEventListener('click', function () {
-                const totalPages = Math.ceil(certificados.length / ITEMS_PER_PAGE);
+                const filteredCerts = filterCertificadosBySearch(certSearchQuery);
+                const totalPages = Math.ceil(filteredCerts.length / ITEMS_PER_PAGE);
                 if (currentCertPage < totalPages) {
                     goToPage(currentCertPage + 1, 'cert');
                 }
+            });
+
+            // Busca de certificados
+            const certSearchInput = document.getElementById('cert-search');
+            const certClearBtn = document.getElementById('cert-clear-search');
+
+            certSearchInput.addEventListener('input', function () {
+                certSearchQuery = this.value;
+                currentCertPage = 1;
+                certClearBtn.classList.toggle('hidden', !certSearchQuery);
+                renderCertificados();
+            });
+
+            certClearBtn.addEventListener('click', function () {
+                certSearchInput.value = '';
+                certSearchQuery = '';
+                currentCertPage = 1;
+                this.classList.add('hidden');
+                renderCertificados();
             });
 
             // Livros
@@ -1717,10 +1814,30 @@
             });
 
             document.getElementById('books-next').addEventListener('click', function () {
-                const totalPages = Math.ceil(livros.length / ITEMS_PER_PAGE);
+                const filteredBooks = filterLivrosBySearch(bookSearchQuery);
+                const totalPages = Math.ceil(filteredBooks.length / ITEMS_PER_PAGE);
                 if (currentBookPage < totalPages) {
                     goToPage(currentBookPage + 1, 'book');
                 }
+            });
+
+            // Busca de livros
+            const bookSearchInput = document.getElementById('book-search');
+            const bookClearBtn = document.getElementById('book-clear-search');
+
+            bookSearchInput.addEventListener('input', function () {
+                bookSearchQuery = this.value;
+                currentBookPage = 1;
+                bookClearBtn.classList.toggle('hidden', !bookSearchQuery);
+                renderLivros();
+            });
+
+            bookClearBtn.addEventListener('click', function () {
+                bookSearchInput.value = '';
+                bookSearchQuery = '';
+                currentBookPage = 1;
+                this.classList.add('hidden');
+                renderLivros();
             });
 
             // Renderizar dados iniciais
