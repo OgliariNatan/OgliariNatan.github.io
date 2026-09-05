@@ -19,3 +19,7 @@
 https://drive.google.com/thumbnail?id=
 ```
  <!-- <script src="https://gist.github.com/OgliariNatan/57bb616cd3a0ad878d8b0a016518429a.js"></script> -->
+
+
+
+ https://docs.google.com/document/d/1CUkNdfmA0TJXepX8NPfFOF9Q23xj2jl2/edit?usp=sharing&ouid=115776247634307689444&rtpof=true&sd=true
